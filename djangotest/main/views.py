@@ -12,9 +12,6 @@ topic = "test/blink"
 client_id = f"python-mqtt-{0}"
 
 
-# Led = 0
-
-
 client = connect_mqtt(broker, port, topic, client_id)
 client.loop_start()
 
@@ -29,9 +26,9 @@ def management(request):
     if request.POST.get("TempSet"):
         blink(client, 1, topic)
     if request.POST.get("LightOn"):
-        print("СЮДАААА ЛУУУУТ")
+        blink(client, 1, topic)
     if request.POST.get("LightOff"):
-        print("СЮДАААА ЛУУУУТ")
+        blink(client, 0, topic)
     if request.POST.get("WateringOn"):
         print("СЮДАААА ЛУУУУТ")
     if request.POST.get("WateringOff"):
