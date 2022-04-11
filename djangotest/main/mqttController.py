@@ -1,12 +1,12 @@
 from paho.mqtt import client as mqtt_client
-broker = '192.168.4.1'
-port = 1883
-topic = "test/blink"
-client_id = f'python-mqtt-{random.randint(0, 1000)}'
+#broker = '192.168.4.1'
+#port = 1883
+#topic = "test/blink"
+#client_id = f'python-mqtt-{random.randint(0, 1000)}'
 # username = 'emqx'
 # password = 'public'
 
-def connect_mqtt():
+def connect_mqtt(broker, port, topic, client_id):
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
             print("Connected to MQTT Broker!")
@@ -21,7 +21,7 @@ def connect_mqtt():
 
 
 def blink(client, msg):
-    client.publish(topic, message)
-client = connect_mqtt()
-client.loop_start()
+    client.publish(topic, msg)
+#client = connect_mqtt()
+#client.loop_start()
 
