@@ -1,12 +1,13 @@
 from paho.mqtt import client as mqtt_client
 
-# broker = '192.168.4.1'
-# port = 1883
-# topic = "test/blink"
-# client_id = f'python-mqtt-{random.randint(0, 1000)}'
-# username = 'emqx'
-# password = 'public'
-
+"""
+broker = '192.168.4.1'
+port = 1883
+topic = "test/blink"
+client_id = f'python-mqtt-{random.randint(0, 1000)}'
+username = 'emqx'
+password = 'public'
+"""
 
 def connect_mqtt(broker, port, topic, client_id):
     def on_connect(client, userdata, flags, rc):

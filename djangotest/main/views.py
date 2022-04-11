@@ -3,9 +3,6 @@ from .models import Status
 from .mqttController import connect_mqtt, blink
 
 
-# import mqttController
-
-
 broker = "192.168.4.1"
 port = 1883
 topic = "test/blink"
