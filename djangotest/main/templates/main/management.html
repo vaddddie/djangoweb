@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Management{% endblock %}
+
+{% block content %}
+<h4>
+    Management
+</h4>
+<div class="wrapper">
+    {% if statuses %}
+        {% for el in statuses %}
+            <div class="alert alert-primary mt-2" style="width:49%">
+                <h3>{{ el.FarmName }}</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <table cellspacing="0" cellpadding="5" style="width:100%">
+                        <tr>
+                            <p style="font-size: 24px">
+                                <td>
+                                    Temperature:{{el.id}} &nbsp;
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="°C" class="form-control" style="width:100%; text-align: right">
+                                </td>
+                                <td>
+                                    <input type="submit" class="btn btn-primary" name="TempSet" value="Set" style="width:100%" id="{{el.id}}">
+                                </td>
+                            </p>
+                        </tr>
+                        <tr>
+                            <p style="font-size: 24px;">
+                                <td>
+                                    Watering: &nbsp;
+                                </td>
+                                <td>
+                                    <input type="submit" class="btn btn-primary" name="WateringOn" value="On" style="width:100%">
+                                </td><td>
+                                    <input type="submit" class="btn btn-primary" name="WateringOff" value="Off" style="width:100%">
+                                </td>
+                            </p>
+                        </tr>
+                        <tr>
+                            <p style="font-size: 24px">
+                                <td>
+                                    Light: &nbsp;
+                                </td>
+                                <td>
+                                    <input type="submit" class="btn btn-primary" name="LightOn" value="On" style="width:100%">
+                                </td><td>
+                                    <input type="submit" class="btn btn-primary" name="LightOff" value="Off" style="width:100%">
+                                </td>
+                            </p>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <input type="submit" class="btn btn-primary" name="Default" value="Default" style="width:100%">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>None</h3>
+    {% endif %}
+</div>
+{% endblock %}

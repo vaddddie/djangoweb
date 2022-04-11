@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Status{% endblock %}
+
+{% block content %}
+    <h2>
+        Farms status
+    </h2>
+    <div class="wrapper">
+        {% if statuses %}
+            {% for el in statuses %}
+                <div class="alert alert-warning mt-2" style="width:49%">
+                    <h3>{{ el.FarmName }}</h3>
+                    <p>Temperature: {{ el.Temperature }}°С</p>
+                    <p>Humidity: {{ el.Humidity }}%</p>
+                    <p>Light: {{ el.Light }}%</p>
+                    <p>Time Left: {{ el.TimeLeft }}</p>
+                    <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>None</h3>
+        {% endif %}
+    </div>
+{% endblock %}
