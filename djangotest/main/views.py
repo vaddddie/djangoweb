@@ -11,6 +11,7 @@ def management(request):
     statuses = Status.objects.all()
     if request.POST.get('TempSet'):
         print("Кнопка сет")
+        print("no")
     if request.POST.get('LightOn'):
         print("СЮДАААА ЛУУУУТ")
     if request.POST.get('LightOff'):
