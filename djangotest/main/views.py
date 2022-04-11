@@ -25,7 +25,7 @@ def index(request):
 def management(request):
     statuses = Status.objects.all()
     if request.POST.get('TempSet'):
-        mqttoutput.blink()
+        mqttoutput.blinkOn()
     if request.POST.get('LightOn'):
         print("СЮДАААА ЛУУУУТ")
     if request.POST.get('LightOff'):

@@ -20,6 +20,8 @@ def connect_mqtt(broker, port, topic, client_id):
     client.connect(broker, port)
     return client
 
+def client():
+    return client
 
 client = connect_mqtt(broker, port, topic, client_id)
 client.loop_start()
