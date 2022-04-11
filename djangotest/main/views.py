@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Status
-import mqttoutput
+from .mqttoutput import blink
 #import mqttController
 
 
@@ -25,7 +25,7 @@ def index(request):
 def management(request):
     statuses = Status.objects.all()
     if request.POST.get('TempSet'):
-        mqttoutput.blinkOn()
+        blink.blinkOn()
     if request.POST.get('LightOn'):
         print("СЮДАААА ЛУУУУТ")
     if request.POST.get('LightOff'):
