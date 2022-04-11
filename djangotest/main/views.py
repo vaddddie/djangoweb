@@ -1,20 +1,20 @@
 from django.shortcuts import render, redirect
 from .models import Status
-import mqttController
-from paho.mqtt import client as mqtt_client
+import mqttoutput
+#import mqttController
 
 
-broker = '192.168.4.1'
-port = 1883
-topic = "test/blink"
-client_id = f'python-mqtt-{0}'
+#broker = '192.168.4.1'
+#port = 1883
+#topic = "test/blink"
+#client_id = f'python-mqtt-{0}'
 
 
-Led = 0
+#Led = 0
 
 
-client = mqttController.connect_mqtt(broker, port, topic, client_id)
-client.loop_start()
+#client = mqttController.connect_mqtt(broker, port, topic, client_id)
+#client.loop_start()
 
 
 def index(request):
@@ -25,7 +25,7 @@ def index(request):
 def management(request):
     statuses = Status.objects.all()
     if request.POST.get('TempSet'):
-        mqttController.blink(client, abs(Led - 1))
+        mqttoutput.blink()
     if request.POST.get('LightOn'):
         print("СЮДАААА ЛУУУУТ")
     if request.POST.get('LightOff'):

@@ -22,6 +22,6 @@ def connect_mqtt(broker, port, topic, client_id):
 
 def blink(client, msg):
     client.publish(topic, msg)
-#client = connect_mqtt()
-#client.loop_start()
+client = connect_mqtt()
+client.loop_start()
 
