@@ -1,43 +1,45 @@
 from django.shortcuts import render, redirect
 from .models import Status
-import mqttoutput
-#import mqttController
+from .mqttController import connect_mqtt, blink
 
 
-#broker = '192.168.4.1'
-#port = 1883
-#topic = "test/blink"
-#client_id = f'python-mqtt-{0}'
+# import mqttController
 
 
-#Led = 0
+broker = "192.168.4.1"
+port = 1883
+topic = "test/blink"
+client_id = f"python-mqtt-{0}"
 
 
-#client = mqttController.connect_mqtt(broker, port, topic, client_id)
-#client.loop_start()
+# Led = 0
+
+
+client = connect_mqtt(broker, port, topic, client_id)
+client.loop_start()
 
 
 def index(request):
     statuses = Status.objects.all()
-    return render(request, 'main/index.html', {'statuses': statuses})
+    return render(request, "main/index.html", {"statuses": statuses})
 
 
 def management(request):
     statuses = Status.objects.all()
-    if request.POST.get('TempSet'):
-        mqttoutput.blink()
-    if request.POST.get('LightOn'):
+    if request.POST.get("TempSet"):
+        blink(client, 1, topic)
+    if request.POST.get("LightOn"):
         print("СЮДАААА ЛУУУУТ")
-    if request.POST.get('LightOff'):
+    if request.POST.get("LightOff"):
         print("СЮДАААА ЛУУУУТ")
-    if request.POST.get('WateringOn'):
+    if request.POST.get("WateringOn"):
         print("СЮДАААА ЛУУУУТ")
-    if request.POST.get('WateringOff'):
+    if request.POST.get("WateringOff"):
         print("СЮДАААА ЛУУУУТ")
-    if request.POST.get('Default'):
+    if request.POST.get("Default"):
         print("СЮДАААА ЛУУУУТ")
-    return render(request, 'main/management.html', {'statuses': statuses})
+    return render(request, "main/management.html", {"statuses": statuses})
 
 
 def mode(request):
-    return render(request, 'main/mode.html')
+    return render(request, "main/mode.html")
