@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Status
 from .forms import StatusForm
-"""from .mqttController import connect_mqtt, blink
+from .mqttController import connect_mqtt, blink
 
 
 broker = "192.168.4.1"
@@ -12,7 +12,7 @@ client_id = f"python-mqtt-{0}"
 
 client = connect_mqtt(broker, port, topic, client_id)
 client.loop_start()
-"""
+
 
 def index(request):
     statuses = Status.objects.all()
@@ -21,16 +21,17 @@ def index(request):
 
 def management(request):
     statuses = Status.objects.all()
-    if request.POST.get("TempSet"):
+    if request.POST.get("NameSend"):
         temp = StatusForm(request.POST)
         if temp.is_valid():
-            print(temp.data['Temperature'])
+            print(temp.data['FarmName'])
     if request.POST.get("LightOn"):
-        pass
-        #blink(client, 1, topic)
+        print(request.POST.get("id"))
+        #print(LightOn.auto_id)
+        blink(client, 1, topic)
     if request.POST.get("LightOff"):
         pass
-        #blink(client, 0, topic)
+        blink(client, 0, topic)
     if request.POST.get("WateringOn"):
         print("СЮДАААА ЛУУУУТ")
     if request.POST.get("WateringOff"):
