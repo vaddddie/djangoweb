@@ -22,10 +22,13 @@ def index(request):
 def management(request):
     statuses = Status.objects.all()
     if request.POST.get("NameSend"):
-        temp = StatusForm(request.POST)
-        if temp.is_valid():
-            temp.save("FarmName")
+        form = StatusForm(request.POST)
+        if form.is_valid():
+            form.save("FarmName")
             #print(temp.data['FarmName'])
+        else:
+            pass
+
     if request.POST.get("CoolerOn"):
         #print(LightOn.auto_id)
         blink(client, 1, topic)
@@ -39,11 +42,11 @@ def management(request):
         pass
         blink(client, 0, topic)
     if request.POST.get("WateringOn"):
-        print("СЮДАААА ЛУУУУТ")
+        blink(client, 1, topic)
     if request.POST.get("WateringOff"):
-        print("СЮДАААА ЛУУУУТ")
+        blink(client, 0, topic)
     if request.POST.get("Default"):
-        print("СЮДАААА ЛУУУУТ")
+        blink(client, 0, topic)
     form = StatusForm()
     contex = {
         "form": form,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="rename added">
+    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
     </list>
@@ -237,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649767037479</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bug fixed">
+      <created>1649767630901</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1649767630901</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,6 +266,7 @@
     <MESSAGE value="button &quot;set&quot; added" />
     <MESSAGE value="buf fixed" />
     <MESSAGE value="rename added" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename added" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
   </component>
 </project>
