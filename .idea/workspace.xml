@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="rename added">
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649767010780</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="rename added">
+      <created>1649767037479</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1649767037479</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

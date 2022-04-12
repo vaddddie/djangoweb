@@ -24,7 +24,7 @@ def management(request):
     if request.POST.get("NameSend"):
         temp = StatusForm(request.POST)
         if temp.is_valid():
-            temp.save()
+            temp.save("FarmName")
             #print(temp.data['FarmName'])
     if request.POST.get("CoolerOn"):
         #print(LightOn.auto_id)
