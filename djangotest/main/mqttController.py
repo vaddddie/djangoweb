@@ -24,5 +24,7 @@ def connect_mqtt(broker, port, topic, client_id):
     return client
 
 
+
+
 def blink(client, msg, topic):
     client.publish(topic, msg)
