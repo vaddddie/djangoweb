@@ -1,5 +1,4 @@
 from paho.mqtt import client as mqtt_client
-import json
 
 """
 broker = '192.168.4.1'
