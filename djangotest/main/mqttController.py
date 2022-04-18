@@ -21,7 +21,7 @@ def connect_mqtt(broker, port, topic, client_id):
         client.subscribe("test/heartbeat")
 
     def on_message(client, userdata, msg):
-        print(json.dumps(msg.payload))
+        print(msg.payload)
 
     # Set Connecting Client ID
     client = mqtt_client.Client(client_id)
