@@ -1,4 +1,5 @@
 from paho.mqtt import client as mqtt_client
+import json
 
 """
 broker = '192.168.4.1'
@@ -20,7 +21,7 @@ def connect_mqtt(broker, port, topic, client_id):
         client.subscribe("test/heartbeat")
 
     def on_message(client, userdata, msg):
-        print(msg.payload)
+        print(json.dumps(msg.payload))
 
     # Set Connecting Client ID
     client = mqtt_client.Client(client_id)

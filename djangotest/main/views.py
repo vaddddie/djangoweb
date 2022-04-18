@@ -28,7 +28,6 @@ class Management(UpdateView):
     form_class = StatusForm
 
 
-
 def management(request):
     statuses = Status.objects.all()
     if request.POST.get("NameSend"):
