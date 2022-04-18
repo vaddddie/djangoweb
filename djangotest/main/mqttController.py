@@ -25,7 +25,7 @@ def connect_mqtt(broker, port, topic, client_id):
             if '__complex__' in dct:
                 return complex(dct['real'], dct['imag'])
             return dct
-        print(json.loads(str(msg.payload).decode('UTF-8'), object_hook=as_complex))
+        print(json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex))
 
     # Set Connecting Client ID
     client = mqtt_client.Client(client_id)
