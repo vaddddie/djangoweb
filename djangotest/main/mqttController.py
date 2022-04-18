@@ -21,6 +21,10 @@ def connect_mqtt(broker, port, topic, client_id):
         client.subscribe("test/heartbeat")
 
     def on_message(client, userdata, msg):
+        def as_complex(dct):
+            if '__complex__' in dct:
+                return complex(dct['real'], dct['imag'])
+            return dct
         print(json.loads(str(msg.payload), object_hook=as_complex))
 
     # Set Connecting Client ID
