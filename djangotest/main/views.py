@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Status
 # from .forms import StatusForm
 from django.views.generic import UpdateView, DetailView, ListView
-# from .mqttController import connect_mqtt, blink
+from .mqttController import connect_mqtt, blink
 
 
 broker = "192.168.4.1"
