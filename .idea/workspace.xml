@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="bug fixed">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_11_04_2022_14_50_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_11_04_2022_14_50__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0002_status_growthprocess_status_timeleft.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0003_alter_status_timeleft.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/mqttController.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/mqttController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +331,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650287876823</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="bug fixed">
+      <created>1650288169683</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1650288169683</updated>
+    </task>
+    <task id="LOCAL-00035" summary="bug fixed">
+      <created>1650288203141</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1650288203141</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,16 +370,5 @@
     <MESSAGE value="json test" />
     <MESSAGE value="bug fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

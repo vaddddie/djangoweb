@@ -1,7 +1,7 @@
 from django.forms import ModelForm, TextInput
 from .models import Status
 
-
+"""
 class StatusForm(ModelForm):
     class Meta:
         model = Status
@@ -12,5 +12,6 @@ class StatusForm(ModelForm):
                 'style': 'width:100%'
             })
         }
+"""
 
 
