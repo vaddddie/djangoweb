@@ -20,21 +20,21 @@ client.loop_start()
 class index(ListView):
     model = Status
     template_name = 'main/index.html'
-    statuses = Status.objects.all()
-    for i in range(1, len(statuses) + 1):
-        status = Status.objects.get(id=i)
-        if abs(datetime.now() - status.TimeDelta) > timedelta(0, 15):
-            print(abs(datetime.now() - status.TimeDelta))
-            print(timedelta(0, 15))
-            status.CheckLine = False
-        else:
-            status.CheckLine = True
-            print('of course')
-        status.save()
     context_object_name = 'statuses'
-"""
+
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
+        statuses = Status.objects.all()
+        for i in range(1, len(statuses) + 1):
+            status = Status.objects.get(id=i)
+            if abs(datetime.now() - status.TimeDelta) > timedelta(0, 15):
+                print(abs(datetime.now() - status.TimeDelta))
+                print(timedelta(0, 15))
+                status.CheckLine = False
+            else:
+                status.CheckLine = True
+                print('of course')
+            status.save()
         return context
 """
 """
