@@ -1,4 +1,5 @@
 from paho.mqtt import client as mqtt_client
+from datetime import datetime, timedelta
 from .models import Status
 import json
 
@@ -31,6 +32,18 @@ def connect_mqtt(broker, port, topic, client_id):
         status = Status.objects.get(MacAddress=j_string['ID'])
         status.Temperature = j_string['Temperature']
         status.Humidity = j_string['Humidity']
+        
+        temp1 = str(status.TimeDelta).split('.')
+        temp1 = str(temp1[0]).split(',')
+        temp1 = str(temp1[len(temp) - 1]).split(':')
+        print(temp1)
+
+        temp2 = str(datetime.now()).split('.')
+        temp2 = str(temp2[0]).split(',')
+        temp2 = str(temp2[len(temp) - 1]).split(':')
+        print(temp2)
+
+        status.TimeDelta = datetime.now()
         status.save()
 
 
