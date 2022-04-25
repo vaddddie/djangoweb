@@ -10,7 +10,7 @@ class Status(models.Model):
     TimeLeft = models.DateTimeField('Time Left:')
     GrowthProcess = models.IntegerField('Growth Process:')
     CheckLine = models.BooleanField('Online:', default=False)
-    TimeDelta = models.DateTimeField('TimePass:',  auto_now=True)
+    TimeDelta = models.DateTimeField('TimePass:',  auto_now=False)
 
     def get_absolute_url(self):
         return '/management'
