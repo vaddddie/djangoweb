@@ -36,7 +36,8 @@ class index(ListView):
                 print('of course')
             status.save()
         return context
-"""
+
+
 """
 class management(ListView):
     model = Status
