@@ -33,7 +33,7 @@ def connect_mqtt(broker, port, topic, client_id):
         status.Temperature = j_string['Temperature']
         status.Humidity = j_string['Humidity']
         print(status.TimeDelta)
-        status.TimeDelta = datetime.now(USE_TZ = False)
+        status.TimeDelta = datetime.now()
         status.save()
 
     """        
