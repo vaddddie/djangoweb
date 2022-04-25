@@ -34,15 +34,15 @@ def connect_mqtt(broker, port, topic, client_id):
         status.Humidity = j_string['Humidity']
         
         temp1 = status.TimeDelta.split('.')
+        print(status.TimeDelta.split)
         temp1 = str(temp1[0]).split(',')
         temp1 = str(temp1[len(temp1) - 1]).split(':')
-        print(temp1)
 
         temp2 = str(datetime.now()).split('.')
         temp2 = str(temp2[0]).split(',')
         temp2 = str(temp2[len(temp2) - 1]).split(':')
-        print(temp2)
-        
+        print(str(datetime.now()))
+
         status.TimeDelta = str(datetime.now())
         status.save()
 
