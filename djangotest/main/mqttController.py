@@ -43,7 +43,7 @@ def connect_mqtt(broker, port, topic, client_id):
         temp2 = str(temp2[len(temp2) - 1]).split(':')
         print(temp2)
         
-        status.TimeDelta = datetime.now()
+        status.TimeDelta = str(datetime.now())
         status.save()
 
 
