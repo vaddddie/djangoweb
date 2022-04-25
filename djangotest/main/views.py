@@ -53,28 +53,25 @@ def management(request):
             pass
             #print(LightOn.auto_id)
             #blink(client, 1, topic)
-        if request.POST.get("CoolerOff"):
+        if request.POST.get(f"CoolerOff{i}"):
             pass
             #blink(client, 0, topic)
 
-        if request.POST.get("WateringOn"):
-            status = Status.objects.get(FarmName='Esp8266 #1')
-            print(status.id)
+        if request.POST.get(f"WateringOn{i}"):
             pass
-
             #blink(client, 1, topic)
-        if request.POST.get("WateringOff"):
+        if request.POST.get(f"WateringOff{i}"):
             pass
             #blink(client, 0, topic)
 
-        if request.POST.get("LightOn"):
+        if request.POST.get(f"LightOn{i}"):
             pass
             # blink(client, 1, topic)
-        if request.POST.get("LightOff"):
+        if request.POST.get(f"LightOff{i}"):
             pass
             # blink(client, 0, topic)
 
-        if request.POST.get("Default"):
+        if request.POST.get(f"Default{i}"):
             pass
             #blink(client, 0, topic)
     contex = {

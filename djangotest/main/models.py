@@ -3,7 +3,8 @@ from django.db import models
 
 class Status(models.Model):
     FarmName = models.CharField('Farm name:', max_length=50, blank=True)
-    Temperature = models.FloatField('Temperature:')
+    MacAddress = models.CharField('Mac Address:', max_length=17)
+    Temperature = models.IntegerField('Temperature:')
     Humidity = models.IntegerField('Humidity:')
     Light = models.IntegerField('Light:')
     TimeLeft = models.DateTimeField('Time Left:')
