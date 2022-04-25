@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from .models import Status
 # from .forms import StatusForm
 from django.views.generic import ListView
-from .mqttController import connect_mqtt, blink
+# from .mqttController import connect_mqtt, blink
 
-
+"""
 broker = "192.168.4.1"
 port = 1883
 topic = "test/blink"
@@ -13,7 +13,7 @@ client_id = f"python-mqtt-{0}"
 
 client = connect_mqtt(broker, port, topic, client_id)
 client.loop_start()
-
+"""
 
 
 class index(ListView):
