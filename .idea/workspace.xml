@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="bug fixed">
+    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="json string fixing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/mqttController.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/mqttController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -394,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650876117086</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="json string fixing">
+      <created>1650877231618</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1650877231618</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -420,7 +424,8 @@
     <MESSAGE value="name change added" />
     <MESSAGE value="online status added" />
     <MESSAGE value="bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
+    <MESSAGE value="json string fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="json string fixing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
