@@ -20,6 +20,13 @@ client.loop_start()
 class index(ListView):
     model = Status
     template_name = 'main/index.html'
+    for i in range(1, len(statuses) + 1):
+        status = Status.objects.get(id=i)
+        if abs(datetime.now() - status.TimeDelta) > datetime(0, 0, 0, 0, 0, 15):
+            status.CheckLine = False
+        else:
+            status.CheckLine = True
+        status.save()
     context_object_name = 'statuses'
 """
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -43,8 +50,8 @@ class management(ListView):
 def management(request):
     statuses = Status.objects.all()
     for i in range(1, len(statuses) + 1):
-        status = Status.objects.get(id=i)
         if request.POST.get(f"NameSend{i}"):
+            status = Status.objects.get(id=i)
             status.FarmName = request.POST.get(f"ChangeName{i}")
             status.save()
             return redirect('/management')
@@ -74,10 +81,6 @@ def management(request):
         if request.POST.get(f"Default{i}"):
             pass
             #blink(client, 0, topic)
-        if abs(datetime.now() - status.TimeDelta) > datetime(0, 0, 0, 0, 0, 15):
-            status.CheckLine = False
-        else:
-            status.CheckLine = True
     contex = {
         "statuses": statuses
     }
