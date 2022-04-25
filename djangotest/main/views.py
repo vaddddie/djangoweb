@@ -20,7 +20,7 @@ client.loop_start()
 class index(ListView):
     model = Status
     template_name = 'main/index.html'
-    for i in range(1, len(statuses) + 1):
+    for i in range(1, len(Status) + 1):
         status = Status.objects.get(id=i)
         if abs(datetime.now() - status.TimeDelta) > datetime(0, 0, 0, 0, 0, 15):
             status.CheckLine = False
