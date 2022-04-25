@@ -23,7 +23,7 @@ class index(ListView):
     statuses = Status.objects.all()
     for i in range(1, len(statuses) + 1):
         status = Status.objects.get(id=i)
-        if abs(datetime.now() - status.TimeDelta) > datetime(0, 0, 0, 0, 0, 15):
+        if abs(datetime.now() - status.TimeDelta) > datetime(1, 0, 0, 0, 0, 15):
             status.CheckLine = False
         else:
             status.CheckLine = True
