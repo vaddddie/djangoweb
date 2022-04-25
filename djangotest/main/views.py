@@ -28,12 +28,9 @@ class index(ListView):
         for i in range(1, len(statuses) + 1):
             status = Status.objects.get(id=i)
             if abs(datetime.now() - status.TimeDelta) > timedelta(0, 15):
-                print(abs(datetime.now() - status.TimeDelta))
-                print(timedelta(0, 15))
                 status.CheckLine = False
             else:
                 status.CheckLine = True
-                print('of course')
             status.save()
         return context
 
