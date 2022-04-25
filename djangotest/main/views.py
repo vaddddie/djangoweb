@@ -58,7 +58,10 @@ def management(request):
             #blink(client, 0, topic)
 
         if request.POST.get("WateringOn"):
+            status = Status.objects.get(FarmName='Esp8266 #1')
+            print(status.id)
             pass
+
             #blink(client, 1, topic)
         if request.POST.get("WateringOff"):
             pass
