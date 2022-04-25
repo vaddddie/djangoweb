@@ -35,7 +35,7 @@ def connect_mqtt(broker, port, topic, client_id):
         
         temp1 = status.TimeDelta.split('.')
         temp1 = str(temp1[0]).split(',')
-        temp1 = str(temp1[len(temp) - 1]).split(':')
+        temp1 = str(temp1[len(temp1) - 1]).split(':')
         print(temp1)
 
         temp2 = str(datetime.now()).split('.')
