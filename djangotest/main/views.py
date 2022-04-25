@@ -3,7 +3,6 @@ from .models import Status
 # from .forms import StatusForm
 from django.views.generic import ListView
 from .mqttController import connect_mqtt, blink
-from datetime import datetime, timedelta
 
 
 broker = "192.168.4.1"
