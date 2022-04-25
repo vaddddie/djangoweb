@@ -26,10 +26,10 @@ def connect_mqtt(broker, port, topic, client_id):
             if '__complex__' in dct:
                 return complex(dct['real'], dct['imag'])
             return dct
-        print(json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex))
-        status = Status.objects.get(id=1)
-        status.Temperature = 1
-        status.Humidity = 1
+        j_string = json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex)
+        status = Status.objects.get(id=j_string['ID'])
+        status.Temperature = j_string['Temperature']
+        status.Humidity = j_string['Humidity']
         status.save()
 
 
