@@ -8,6 +8,7 @@ class Status(models.Model):
     Light = models.IntegerField('Light:')
     TimeLeft = models.DateTimeField('Time Left:')
     GrowthProcess = models.IntegerField('Growth Process:')
+    CheckLine = models.BooleanField('Online:', default=False)
 
     def get_absolute_url(self):
         return '/management'

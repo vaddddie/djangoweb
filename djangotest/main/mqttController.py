@@ -27,6 +27,11 @@ def connect_mqtt(broker, port, topic, client_id):
                 return complex(dct['real'], dct['imag'])
             return dct
         print(json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex))
+        status = Status.objects.get(id=1)
+        status.Temperature = 1
+        status.Humidity = 1
+        status.save()
+
 
     # Set Connecting Client ID
     client = mqtt_client.Client(client_id)

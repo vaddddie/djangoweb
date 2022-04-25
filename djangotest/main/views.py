@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Status
 # from .forms import StatusForm
-from django.views.generic import UpdateView, DetailView, ListView
+from django.views.generic import ListView
 from .mqttController import connect_mqtt, blink
+from datetime import datetime, timedelta
 
 
 broker = "192.168.4.1"
@@ -20,8 +21,11 @@ class index(ListView):
     model = Status
     template_name = 'main/index.html'
     context_object_name = 'statuses'
-
-
+"""
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+"""
 """
 class management(ListView):
     model = Status
@@ -41,31 +45,32 @@ def management(request):
     for i in range(1, len(statuses) + 1):
         if request.POST.get(f"NameSend{i}"):
             status = Status.objects.get(id=i)
-            print(status.FarmName, i, sep=" ")
             status.FarmName = request.POST.get(f"ChangeName{i}")
-            print(status.FarmName, i, sep=" ")
             status.save()
             return redirect('/management')
+
         if request.POST.get(f"CoolerOn{i}"):
-            print('yes', i)
+            pass
             #print(LightOn.auto_id)
             #blink(client, 1, topic)
         if request.POST.get("CoolerOff"):
-            print('yeah')
             pass
             #blink(client, 0, topic)
+
         if request.POST.get("WateringOn"):
             pass
             #blink(client, 1, topic)
         if request.POST.get("WateringOff"):
             pass
             #blink(client, 0, topic)
+
         if request.POST.get("LightOn"):
             pass
             # blink(client, 1, topic)
         if request.POST.get("LightOff"):
             pass
             # blink(client, 0, topic)
+
         if request.POST.get("Default"):
             pass
             #blink(client, 0, topic)
