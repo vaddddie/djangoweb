@@ -126,4 +126,8 @@ def management(request):
 
 
 def mode(request):
-    return render(request, "main/mode.html")
+    statuses = Status.objects.all()
+    contex = {
+        "statuses": statuses
+    }
+    return render(request, "main/mode.html", contex)
