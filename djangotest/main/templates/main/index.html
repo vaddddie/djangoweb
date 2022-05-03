@@ -10,21 +10,25 @@
     <div class="wrapper">
         {% if statuses %}
             {% for el in statuses %}
-                <div class="alert alert-warning mt-2" style="width:49%">
-                    <rb style="font-size:32px; font-weight:bold">{{ el.FarmName }}</rb>
-                    {% if el.CheckLine %}
-                        <rb style="float:right; margin-top:13px; display:block; width:20px; height:20px; border-radius:10px; background-color: green;"></rb>
-                        <rb style="font-size:22px; float:right; margin-top:5px; margin-right:10px">Online</rb>
-                    {% else %}
-                        <rb style="float:right; margin-top:13px; display:block; width:20px; height:20px; border-radius:10px; background-color: red;"></rb>
-                        <rb style="font-size:22px; float:right; margin-top:5px; margin-right:10px">Offline</rb>
-                    {% endif %}
-                    <p style="margin-top:20px">Temperature: {{ el.Temperature }}°С</p>
-                    <p>Humidity: {{ el.Humidity }}%</p>
-                    <p>Light: {{ el.Light }}%</p>
-                    <p>Time Left: {{ el.TimeLeft }}</p>
-                    <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
-                </div>
+                {% if el.GrowthProcess < 100 %}
+                    <div class="alert alert-warning mt-2" style="width:49%">
+                {% else %}
+                    <div class="alert alert-success mt-2" style="width:49%">
+                {% endif %}
+                       <rb style="font-size:32px; font-weight:bold">{{ el.FarmName }}</rb>
+                        {% if el.CheckLine %}
+                            <rb style="float:right; margin-top:13px; display:block; width:20px; height:20px; border-radius:10px; background-color: green;"></rb>
+                            <rb style="font-size:22px; float:right; margin-top:5px; margin-right:10px">Online</rb>
+                        {% else %}
+                            <rb style="float:right; margin-top:13px; display:block; width:20px; height:20px; border-radius:10px; background-color: red;"></rb>
+                            <rb style="font-size:22px; float:right; margin-top:5px; margin-right:10px">Offline</rb>
+                        {% endif %}
+                        <p style="margin-top:20px">Temperature: {{ el.Temperature }}°С</p>
+                        <p>Humidity: {{ el.Humidity }}%</p>
+                        <p>Light: {{ el.Light }}%</p>
+                        <p>Time Left: {{ el.TimeLeft }}</p>
+                        <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
+                    </div>
             {% endfor %}
         {% else %}
             <h3>None</h3>
