@@ -116,6 +116,10 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
+STATICFILES_DIRS = [
+    BASE_DIR / "djangotest/static",
+]
+
 STATIC_URL = "static/"
 
 # Default primary key field type

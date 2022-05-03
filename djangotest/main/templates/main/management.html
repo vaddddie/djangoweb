@@ -9,69 +9,75 @@
 <div class="wrapper">
     {% if statuses %}
         {% for el in statuses %}
-            <div class="alert alert-primary mt-2" style="width:49%">
-                <form method="post">
-                    {% csrf_token %}
-                    <table cellspacing="0" cellpadding="5" style="width:100%">
-                        <tr>
-                            <td>
-                                <h3>{{ el.FarmName }}</h3>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" style="width:100%" name="ChangeName{{ el.id }}">
-                            </td>
-                            <td>
-                                <input type="submit" class="btn btn-primary" name="NameSend{{ el.id }}" value="Rename" style="width:100%">
-                            </td>
-                        </tr>
-                        <tr>
-                            <p style="font-size: 24px">
+            {% if el.CheckLine %}
+                <div class="alert alert-primary mt-2" style="width:49%">
+            {% else %}
+                <div class="alert alert-primary mt-2" style="width:49%; pointer-events: none; opacity: 0.5; background: #CCC;">
+            {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <table cellspacing="0" cellpadding="5" style="width:100%">
+                            <tr>
                                 <td>
-                                    Cooler: &nbsp;
+                                    <h3>{{ el.FarmName }}</h3>
                                 </td>
                                 <td>
-                                    <input type="submit" class="btn btn-primary" name="CoolerOn{{ el.id }}" value="On" style="width:100%">
+                                    <input type="text" class="form-control" style="width:100%" name="ChangeName{{ el.id }}">
                                 </td>
                                 <td>
-                                    <input type="submit" class="btn btn-primary" name="CoolerOff{{ el.id }}" value="Off" style="width:100%">
+                                    <input type="submit" class="btn btn-primary" name="NameSend{{ el.id }}" value="Rename" style="width:100%">
                                 </td>
-                            </p>
-                        </tr>
-                        <tr>
-                            <p style="font-size: 24px;">
-                                <td>
-                                    Watering: &nbsp;
+                            </tr>
+                            <tr>
+                                <p style="font-size: 24px">
+                                    <td>
+                                        Cooler: &nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="submit" class="btn btn-primary" name="CoolerOn{{ el.id }}" value="On" style="width:100%">
+                                    </td>
+                                    <td>
+                                        <input type="submit" class="btn btn-primary" name="CoolerOff{{ el.id }}" value="Off" style="width:100%">
+                                    </td>
+                                </p>
+                            </tr>
+                            <tr>
+                                <p style="font-size: 24px;">
+                                    <td>
+                                        Watering: &nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="submit" class="btn btn-primary" name="WateringOn{{ el.id }}" value="On" style="width:100%">
+                                    </td><td>
+                                        <input type="submit" class="btn btn-primary" name="WateringOff{{ el.id }}" value="Off" style="width:100%">
+                                    </td>
+                                </p>
+                            </tr>
+                            <tr>
+                                <p style="font-size: 24px">
+                                    <td>
+                                        Light: &nbsp;
+                                    </td>
+                                    <td>
+                                        <input type="submit" class="btn btn-primary" name="LightOn{{ el.id }}" value="On" style="width:100%" id="45">
+                                    </td><td>
+                                        <input type="submit" class="btn btn-primary" name="LightOff{{ el.id }}" value="Off" style="width:100%">
+                                    </td>
+                                </p>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <input type="submit" class="btn btn-primary" name="Default{{ el.id }}" value="Default" style="width:100%">
                                 </td>
-                                <td>
-                                    <input type="submit" class="btn btn-primary" name="WateringOn{{ el.id }}" value="On" style="width:100%">
-                                </td><td>
-                                    <input type="submit" class="btn btn-primary" name="WateringOff{{ el.id }}" value="Off" style="width:100%">
-                                </td>
-                            </p>
-                        </tr>
-                        <tr>
-                            <p style="font-size: 24px">
-                                <td>
-                                    Light: &nbsp;
-                                </td>
-                                <td>
-                                    <input type="submit" class="btn btn-primary" name="LightOn{{ el.id }}" value="On" style="width:100%" id="45">
-                                </td><td>
-                                    <input type="submit" class="btn btn-primary" name="LightOff{{ el.id }}" value="Off" style="width:100%">
-                                </td>
-                            </p>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <input type="submit" class="btn btn-primary" name="Default{{ el.id }}" value="Default" style="width:100%">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
         {% endfor %}
     {% else %}
         <h3>None</h3>
     {% endif %}
 </div>
 {% endblock %}
+
+

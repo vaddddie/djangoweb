@@ -3,7 +3,7 @@ from .models import Status
 # from .forms import StatusForm
 from django.views.generic import ListView
 from .mqttController import connect_mqtt, blink
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta, time, date
 
 
 broker = "192.168.4.1"
@@ -27,6 +27,42 @@ class index(ListView):
         statuses = Status.objects.all()
         for i in range(1, len(statuses) + 1):
             status = Status.objects.get(id=i)
+
+            temp = int((status.TimeTarget - datetime.now()).total_seconds())
+
+            if temp > 0:
+                seconds = temp
+
+                days, seconds = divmod(seconds, 86400)
+                hours, seconds = divmod(seconds, 3600)
+                minutes, seconds = divmod(seconds, 60)
+
+                if int(hours) < 10:
+                    hours = '0' + f'{hours}'
+
+                if int(minutes) < 10:
+                    minutes = '0' + f'{minutes}'
+
+                if int(seconds) < 10:
+                    seconds = '0' + f'{seconds}'
+
+            else:
+                days = 0
+                hours = minutes = seconds = '00'
+
+            suffix = ''
+            if days > 1 or days == 0:
+                suffix = 's'
+
+            status.TimeLeft = f'{days} day{suffix} {hours}:{minutes}:{seconds}'
+
+            ABSTime = 1000000
+
+            if temp > 0:
+                status.GrowthProcess = (ABSTime - temp) / ABSTime
+            else:
+                status.GrowthProcess = 100
+
             if abs(datetime.now() - status.TimeDelta) > timedelta(0, 15):
                 status.CheckLine = False
             else:
@@ -52,8 +88,8 @@ class management(ListView):
 def management(request):
     statuses = Status.objects.all()
     for i in range(1, len(statuses) + 1):
-        if request.POST.get(f"NameSend{i}"):
-            status = Status.objects.get(id=i)
+        status = Status.objects.get(id=i)
+        if request.POST.get(f"NameSend{i}") and request.POST.get(f"ChangeName{i}") != '':
             status.FarmName = request.POST.get(f"ChangeName{i}")
             status.save()
             return redirect('/management')

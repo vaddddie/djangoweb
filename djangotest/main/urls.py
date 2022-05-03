@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', views.index.as_view(), name='home'),
     #path('management', views.management, name='management'),
     path('mode', views.mode, name='mode'),
     path('management', views.management, name='management')
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
