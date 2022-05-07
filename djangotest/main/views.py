@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Status
 # from .forms import StatusForm
 from django.views.generic import ListView
-from .mqttController import connect_mqtt, blink
+from .mqttController import connect_mqtt, output_msg
 from datetime import datetime, timedelta, time, date
 
 
@@ -97,7 +97,7 @@ def management(request):
         if request.POST.get(f"CoolerOn{i}"):
             pass
             #print(LightOn.auto_id)
-            #blink(client, 1, topic)
+            #output_msg(client, {'ID':status.MacAddress}, 'test/blink')
         if request.POST.get(f"CoolerOff{i}"):
             pass
             #blink(client, 0, topic)
@@ -125,9 +125,12 @@ def management(request):
     return render(request, "main/management.html", contex)
 
 
-def mode(request):
+def ArinaBeLike(request):
     statuses = Status.objects.all()
     contex = {
         "statuses": statuses
     }
-    return render(request, "main/mode.html", contex)
+    return render(request, "main/ArinaBeLike.html", contex)
+
+def mode(request):
+    return render(request, 'main/mode.html')

@@ -61,5 +61,6 @@ def connect_mqtt(broker, port, topic, client_id):
 
 
 
-def blink(client, msg, topic):
+def output_msg(client, msg, topic):
+    msg = json.dumps(msg)
     client.publish(topic, msg)
