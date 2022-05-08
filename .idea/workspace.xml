@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="Online status added">
+    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="Mods added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/mqttController.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/mqttController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +59,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tasks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -94,13 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649254519730</updated>
-    </task>
-    <task id="LOCAL-00034" summary="bug fixed">
-      <created>1650288169683</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1650288169683</updated>
     </task>
     <task id="LOCAL-00035" summary="bug fixed">
       <created>1650288203141</created>
@@ -438,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651571249307</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Mods added">
+      <created>1651925315539</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1651925315539</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -467,17 +465,7 @@
     <MESSAGE value="refresh page added" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="Online status added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Online status added" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Mods added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mods added" />
   </component>
 </project>

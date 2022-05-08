@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Status
+from .models import Status, Mode
 # from .forms import StatusForm
 from django.views.generic import ListView
 from .mqttController import connect_mqtt, output_msg
@@ -87,6 +87,7 @@ class management(ListView):
 
 def management(request):
     statuses = Status.objects.all()
+    mods = Mode.objects.all()
     for i in range(1, len(statuses) + 1):
         status = Status.objects.get(id=i)
         if request.POST.get(f"NameSend{i}") and request.POST.get(f"ChangeName{i}") != '':
@@ -119,8 +120,26 @@ def management(request):
         if request.POST.get(f"Default{i}"):
             pass
             #blink(client, 0, topic)
+
+        if request.POST.get(f"Accept{i}"):
+            temp = request.POST.get('ModsSelect')
+            status.Mode = temp
+            status.save()
+            modes = Mode.objects.get(ModName=temp)
+            j_string = {
+                "ID": status.MacAddress,
+                "IWater": modes.IWater,
+                "TWater": modes.TWater,
+                "ILight": modes.ILight,
+                "TLight": modes.TWater,
+                "Temperature": modes.Temperature,
+                "Humidity": modes.Humidity
+            }
+            #output_msg(client, j_string, 'test/')
+
     contex = {
-        "statuses": statuses
+        "statuses": statuses,
+        "mods": mods
     }
     return render(request, "main/management.html", contex)
 
@@ -128,9 +147,13 @@ def management(request):
 def ArinaBeLike(request):
     statuses = Status.objects.all()
     contex = {
-        "statuses": statuses
+        "statuses": statuses,
     }
     return render(request, "main/ArinaBeLike.html", contex)
 
 def mode(request):
+    statuses = Status.objects.all()
+    contex = {
+        "statuses": statuses,
+    }
     return render(request, 'main/mode.html')

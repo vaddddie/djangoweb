@@ -9,7 +9,7 @@
 <div class="wrapper">
     {% if statuses %}
         {% for el in statuses %}
-            {% if el.CheckLine %}
+            {% if not el.CheckLine %}
                 <div class="alert alert-primary mt-2" style="width:49%">
             {% else %}
                 <div class="alert alert-primary mt-2" style="width:49%; pointer-events: none; opacity: 0.5; background: #CCC;">
@@ -22,10 +22,62 @@
                                     <h3>{{ el.FarmName }}</h3>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" style="width:100%" name="ChangeName{{ el.id }}">
+                                    <input type="text" class="form-control" style="width:100%" name="ChangeName{{ el.id }}" placeholder="Enter a new name">
                                 </td>
                                 <td>
                                     <input type="submit" class="btn btn-primary" name="NameSend{{ el.id }}" value="Rename" style="width:100%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <hr><br>
+                                    <div>
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td style="width:60%">
+                                                    <select style="width:100%; height:38px" name="ModsSelect">
+                                                        <option selected disabled>
+                                                            Select a mode
+                                                        </option>
+                                                        {% for mds in mods %}
+                                                            <option name="{{ mds.ModName }}">
+                                                                {{ mds.ModName }}
+                                                            </option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </td>
+                                                <td style="width:40%">
+                                                    <input type="submit" class="btn btn-primary" name="Accept{{ el.id }}" value="Accept" style="width:100%">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div>
+                                        <input type="submit" class="btn btn-primary" name="Again{{ el.id }}" value="Again" style="width:100%">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <table style="width:100%">
+                                        <tr>
+                                            <td style="width:60%">
+                                                <div>
+                                                    <input type="submit" class="btn btn-primary" name="Stop{{ el.id }}" value="Stop" style="width:100%">
+                                                </div>
+                                            </td>
+                                            <td style="width:40%">
+                                                <div>
+                                                    <input type="submit" class="btn btn-danger" name="Delete{{ el.id }}" value="Delete" style="width:100%">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br><hr>
                                 </td>
                             </tr>
                             <tr>
