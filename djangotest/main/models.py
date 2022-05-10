@@ -13,6 +13,7 @@ class Status(models.Model):
     CheckLine = models.BooleanField('Online:', default=False)
     TimeDelta = models.DateTimeField('TimePass:',  auto_now=False)
     Mode = models.CharField('Mode:', max_length=50)
+    Working = models.BooleanField('Working:', default=False)
 
     def get_absolute_url(self):
         return '/management'

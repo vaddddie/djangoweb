@@ -29,11 +29,31 @@ def connect_mqtt(broker, port, topic, client_id):
             return dct
         print(json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex))
         j_string = json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex)
-        status = Status.objects.get(MacAddress=j_string['ID'])
-        status.Temperature = j_string['Temperature']
-        status.Humidity = j_string['Humidity']
-        status.TimeDelta = datetime.now()
-        status.save()
+        statuses = Status.object.all()
+        for i in range(1, len(statuses) + 1):
+            status = Status.object.get(id=i)
+            if status.MacAddress == j_string['ID']:
+                status.Temperature = j_string['Temperature']
+                status.Humidity = j_string['Humidity']
+                status.TimeDelta = datetime.now()
+                status.save()
+        else:
+                new_esp = Status(
+                    FarmName=f'Farm №{len(statuses) + 1}',
+                    MacAddress=j_string['ID'],
+                    Temperature=j_string['Temperature'],
+                    Humidity=j_string['Humidity'],
+                    Light=0,
+                    TimeTarget=datetime.now(),
+                    TimeLeft='None',
+                    GrowthProcess=0,
+                    CheckLine=True,
+                    Mode='None'
+                )
+                new_esp.save()
+
+
+
 
     """        
             temp1 = status.TimeDelta.split('.')

@@ -6,7 +6,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.index.as_view(), name='home'),
-    #path('management', views.management, name='management'),
     path('mode', views.mode, name='mode'),
     path('management', views.management, name='management'),
     path('ArinaBeLike', views.ArinaBeLike, name='ArinaBeLike')

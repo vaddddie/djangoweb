@@ -28,40 +28,41 @@ class index(ListView):
         for i in range(1, len(statuses) + 1):
             status = Status.objects.get(id=i)
 
-            temp = int((status.TimeTarget - datetime.now()).total_seconds())
+            if status.Working:
+                temp = int((status.TimeTarget - datetime.now()).total_seconds())
 
-            if temp > 0:
-                seconds = temp
+                if temp > 0:
+                    seconds = temp
 
-                days, seconds = divmod(seconds, 86400)
-                hours, seconds = divmod(seconds, 3600)
-                minutes, seconds = divmod(seconds, 60)
+                    days, seconds = divmod(seconds, 86400)
+                    hours, seconds = divmod(seconds, 3600)
+                    minutes, seconds = divmod(seconds, 60)
 
-                if int(hours) < 10:
-                    hours = '0' + f'{hours}'
+                    if int(hours) < 10:
+                        hours = '0' + f'{hours}'
 
-                if int(minutes) < 10:
-                    minutes = '0' + f'{minutes}'
+                    if int(minutes) < 10:
+                        minutes = '0' + f'{minutes}'
 
-                if int(seconds) < 10:
-                    seconds = '0' + f'{seconds}'
+                    if int(seconds) < 10:
+                        seconds = '0' + f'{seconds}'
 
-            else:
-                days = 0
-                hours = minutes = seconds = '00'
+                else:
+                    days = 0
+                    hours = minutes = seconds = '00'
 
-            suffix = ''
-            if days > 1 or days == 0:
-                suffix = 's'
+                suffix = ''
+                if days > 1 or days == 0:
+                    suffix = 's'
 
-            status.TimeLeft = f'{days} day{suffix} {hours}:{minutes}:{seconds}'
+                status.TimeLeft = f'{days} day{suffix} {hours}:{minutes}:{seconds}'
 
-            ABSTime = 1000000
+                ABSTime = 1000000
 
-            if temp > 0:
-                status.GrowthProcess = (ABSTime - temp) / ABSTime
-            else:
-                status.GrowthProcess = 100
+                if temp > 0:
+                    status.GrowthProcess = (ABSTime - temp) / ABSTime
+                else:
+                    status.GrowthProcess = 100
 
             if abs(datetime.now() - status.TimeDelta) > timedelta(0, 15):
                 status.CheckLine = False
@@ -69,20 +70,6 @@ class index(ListView):
                 status.CheckLine = True
             status.save()
         return context
-
-
-"""
-class management(ListView):
-    model = Status
-    template_name = 'main/management.html'
-    context_object_name = 'statuses'
-    # form_class = StatusForm
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # context['form'] = StatusForm()
-        return context
-"""
 
 
 def management(request):
@@ -96,34 +83,35 @@ def management(request):
             return redirect('/management')
 
         if request.POST.get(f"CoolerOn{i}"):
+            # print(LightOn.auto_id)
+            # output_msg(client, {'ID':status.MacAddress}, 'test/blink')
             pass
-            #print(LightOn.auto_id)
-            #output_msg(client, {'ID':status.MacAddress}, 'test/blink')
+
         if request.POST.get(f"CoolerOff{i}"):
             pass
-            #blink(client, 0, topic)
 
         if request.POST.get(f"WateringOn{i}"):
             pass
-            #blink(client, 1, topic)
         if request.POST.get(f"WateringOff{i}"):
             pass
-            #blink(client, 0, topic)
 
         if request.POST.get(f"LightOn{i}"):
             pass
-            # blink(client, 1, topic)
         if request.POST.get(f"LightOff{i}"):
             pass
-            # blink(client, 0, topic)
 
         if request.POST.get(f"Default{i}"):
             pass
-            #blink(client, 0, topic)
+
+        if request.POST.get(f"Stop{i}"):
+            status.Working = False
+            status.GrowthProcess = 0
+            status.save()
 
         if request.POST.get(f"Accept{i}"):
             temp = request.POST.get('ModsSelect')
             status.Mode = temp
+            status.Working = True
             status.save()
             modes = Mode.objects.get(ModName=temp)
             j_string = {
@@ -135,7 +123,7 @@ def management(request):
                 "Temperature": modes.Temperature,
                 "Humidity": modes.Humidity
             }
-            #output_msg(client, j_string, 'test/')
+            # output_msg(client, j_string, 'test/')
 
     contex = {
         "statuses": statuses,

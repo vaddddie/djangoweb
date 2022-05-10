@@ -27,7 +27,11 @@
                         <p>Humidity: {{ el.Humidity }}%</p>
                         <p>Light: {{ el.Light }}%</p>
                         <p>Time Left: {{ el.TimeLeft }}</p>
-                        <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
+                        {% if el.Working %}
+                            <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
+                        {% else %}
+                            <h4>Growth Process: None</h4>
+                        {% endif %}
                     </div>
             {% endfor %}
         {% else %}
