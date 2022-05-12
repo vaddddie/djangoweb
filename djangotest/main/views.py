@@ -96,9 +96,9 @@ def management(request):
             pass
 
         if request.POST.get(f"LightOn{i}"):
-            pass
+            output_msg(client, 1, 'test/light')
         if request.POST.get(f"LightOff{i}"):
-            pass
+            output_msg(client, 0, 'test/light')
 
         if request.POST.get(f"Default{i}"):
             pass
