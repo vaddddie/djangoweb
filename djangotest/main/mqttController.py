@@ -46,6 +46,7 @@ def connect_mqtt(broker, port, topic, client_id):
                     Light=0,
                     TimeTarget=datetime.now(),
                     TimeLeft='None',
+                    TimeDelta=datetime.now(),
                     GrowthProcess=0,
                     CheckLine=True,
                     Mode='None'
