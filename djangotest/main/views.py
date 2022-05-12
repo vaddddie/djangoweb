@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Status, Mode
-# from .forms import StatusForm
-from django.views.generic import ListView
+from .forms import ModeForm
+from django.views.generic import ListView, CreateView
 from .mqttController import connect_mqtt, output_msg
 from datetime import datetime, timedelta, time, date
 
@@ -108,10 +108,11 @@ def management(request):
             status.GrowthProcess = 0
             status.save()
 
-        if request.POST.get(f"Accept{i}"):
+        if request.POST.get(f"Accept{i}") and request.POST.get('ModsSelect') is not None:
             temp = request.POST.get('ModsSelect')
             status.Mode = temp
             status.Working = True
+            status.TimeTarget = datetime.now() + timedelta(14)
             status.save()
             modes = Mode.objects.get(ModName=temp)
             j_string = {
@@ -139,9 +140,18 @@ def ArinaBeLike(request):
     }
     return render(request, "main/ArinaBeLike.html", contex)
 
+"""
 def mode(request):
     statuses = Status.objects.all()
     contex = {
         "statuses": statuses,
     }
     return render(request, 'main/mode.html')
+"""
+class mode(CreateView):
+    form_class = ModeForm
+    template_name = 'main/mode.html'
+
+    def get_contex_date(self, *, object_list=None, **kwargs):
+        context = super().get_context_date(**kwargs)
+        return context

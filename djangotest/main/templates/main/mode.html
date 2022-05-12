@@ -3,81 +3,17 @@
 {% block title %}Mods{% endblock %}
 
 {% block content %}
-<h4>
-    Mod
+<h4 style="text-align:center">
+    Creating a new mode
 </h4>
-<div class="wrapper">
-    {% if statuses %}
-        {% for el in statuses %}
-            <div class="alert alert-secondary mt-3" style="width: 47%">
-                <form method="post">
-                    {% csrf_token %}
-                    <table cellspacing="0" cellpadding="7" style="width:100%">
-                        <tr>
-                            <td>
-                                <h2 style="text-decoration-line: underline; text-decoration-style: solid">{{ el.FarmName }}</h2>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" style="width:100%" name="ChangeName{{ el.id }}" placeholder="Enter a new name">
-                            </td>
-                            <td>
-                                <input type="submit" class="btn btn-primary" name="NameSend{{ el.id }}" value="Rename" style="width:100%">
-                            </td>
-                        </tr>
-                        <tr>
-                            <p style="font-size: 24px">
-                                <td style="vertical-align: top">
-                                    Cooler: &nbsp;
-                                </td>
-                                <td>
-                                    <input type="submit" class="btn btn-success" name="CoolerOn{{ el.id }}" value="On" style="width:100%; margin-bottom: 5px">
-                                    <hr size="2">
-                                </td>
-                                <td>
-                                    <input type="submit" class="btn btn-secondary" name="CoolerOff{{ el.id }}" value="Off" style="width:100%; margin-bottom: 5px">
-                                    <hr size="2">
-                                </td>
-                            </p>
-                        </tr>
-                        <tr>
-                            <p style="font-size: 24px;">
-                                    <td style="vertical-align: top">
-                                        Watering: &nbsp;
-                                    </td>
-                                    <td>
-                                        <input type="submit" class="btn btn-success" name="WateringOn{{ el.id }}" value="On" style="width:100%; margin-bottom: 5px">
-                                        <hr size="2">
-                                    </td>
-                                    <td>
-                                        <input type="submit" class="btn btn-secondary" name="WateringOff{{ el.id }}" value="Off" style="width:100%; margin-bottom: 5px">
-                                        <hr size="2">
-                                    </td>
-                                </p>
-                        </tr>
-                        <tr>
-                            <p style="font-size: 24px">
-                                <td style="vertical-align: top">
-                                    Light: &nbsp;
-                                </td>
-                                <td>
-                                    <input type="submit" class="btn btn-success" name="LightOn{{ el.id }}" value="On" style="width:100%" id="45">
-                                </td>
-                                <td>
-                                    <input type="submit" class="btn btn-secondary" name="LightOff{{ el.id }}" value="Off" style="width:100%">
-                                </td>
-                            </p>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <input type="submit" class="btn btn-danger" name="Default{{ el.id }}" value="Default" style="width:100%; margin-top: 5px">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        {% endfor %}
-    {% else %}
-        <h3>None</h3>
-    {% endif %}
+<div align="center">
+    <div style="background-color:red; width:50%">
+        <table>
+            <tr>
+
+            </tr>
+        </table>
+    </div>
 </div>
+
 {% endblock %}

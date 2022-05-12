@@ -1,5 +1,5 @@
 from django.forms import ModelForm, TextInput
-from .models import Status
+from .models import Status, Mode
 
 """
 class StatusForm(ModelForm):
@@ -13,5 +13,21 @@ class StatusForm(ModelForm):
             })
         }
 """
+class ModeForm(ModelForm):
+    class Meta:
+        model = Mode
+        fields = [
+            "ModName",
+            "IWater",
+            "TWater",
+            "ILight",
+            "TLight",
+            "Temperature",
+            "Humidity"
+        ]
+        widgets = {
+            "ModName" : TextInput()
+        }
+
 
 

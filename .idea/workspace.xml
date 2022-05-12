@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="Mods fixed">
+    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="Bug fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/mode.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/mode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangotest/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,13 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649254519730</updated>
-    </task>
-    <task id="LOCAL-00037" summary="name change added">
-      <created>1650661590012</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1650661590012</updated>
     </task>
     <task id="LOCAL-00038" summary="bug fixed">
       <created>1650661627815</created>
@@ -436,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652194995396</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Bug fixed">
+      <created>1652364826955</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1652364826955</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -467,6 +468,7 @@
     <MESSAGE value="Online status added" />
     <MESSAGE value="Mods added" />
     <MESSAGE value="Mods fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mods fixed" />
+    <MESSAGE value="Bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixed" />
   </component>
 </project>
