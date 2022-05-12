@@ -29,7 +29,7 @@ def connect_mqtt(broker, port, topic, client_id):
             return dct
         print(json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex))
         j_string = json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex)
-        statuses = Status.object.all()
+        statuses = Status.objects.all()
         for i in range(1, len(statuses) + 1):
             status = Status.object.get(id=i)
             if status.MacAddress == j_string['ID']:
