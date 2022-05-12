@@ -9,7 +9,7 @@
 <div class="wrapper">
     {% if statuses %}
         {% for el in statuses %}
-            {% if not el.CheckLine %}
+            {% if el.CheckLine %}
                 <div class="alert alert-primary mt-2" style="width:49%">
             {% else %}
                 <div class="alert alert-primary mt-2" style="width:49%; pointer-events: none; opacity: 0.5; background: #CCC;">
