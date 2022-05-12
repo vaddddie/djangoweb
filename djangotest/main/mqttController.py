@@ -37,6 +37,7 @@ def connect_mqtt(broker, port, topic, client_id):
                 status.Humidity = j_string['Humidity']
                 status.TimeDelta = datetime.now()
                 status.save()
+                break
         else:
                 new_esp = Status(
                     id=len(statuses) + 1,
