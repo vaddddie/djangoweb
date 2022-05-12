@@ -39,6 +39,7 @@ def connect_mqtt(broker, port, topic, client_id):
                 status.save()
         else:
                 new_esp = Status(
+                    id=len(statuses) + 1,
                     FarmName=f'Farm №{len(statuses) + 1}',
                     MacAddress=j_string['ID'],
                     Temperature=j_string['Temperature'],
