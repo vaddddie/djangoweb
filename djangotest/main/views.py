@@ -96,13 +96,26 @@ def management(request):
             pass
 
         if request.POST.get(f"LightOn{i}"):
-            output_msg(client, 1, 'test/light')
+            msg = {
+                "MAC":status.MacAddress,
+                "state":1
+            }
+            output_msg(client, msg, 'test/light')
             pass
         if request.POST.get(f"LightOff{i}"):
-            output_msg(client, 0, 'test/light')
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 2
+            }
+            output_msg(client, msg, 'test/light')
             pass
 
         if request.POST.get(f"Default{i}"):
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 0
+            }
+            output_msg(client, msg, 'test/light')
             pass
 
         if request.POST.get(f"Stop{i}"):
