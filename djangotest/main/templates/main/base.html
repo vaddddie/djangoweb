@@ -12,7 +12,7 @@
 	width: 100%;
 	box-sizing: border-box;
 	text-align: justify;
-}
+    }
 	.wrapper:after{
 		position: relative;
 		display: inline-block;
@@ -31,6 +31,59 @@
 		text-align: left;
 		vertical-align: top;
 	}
+	.cl-btn-2 {
+        margin-bottom: 20px;
+        margin-right: 25px;
+        display: flex;
+        justify-content: right;
+    }
+    .cl-btn-2 div {
+        cursor: pointer;
+        position: relative;
+        height: 0px;
+        width: 0px;
+    }
+    .cl-btn-2 .leftright {
+        height: 4px;
+        width: 25px;
+        position: absolute;
+        margin-top: 0px;
+        background-color: red;
+        border-radius: 2px;
+        transform: rotate(45deg);
+        transition: all .3s ease-in;
+    }
+    .cl-btn-2 .rightleft {
+        height: 4px;
+        width: 25px;
+        position: absolute;
+        margin-top: 0px;
+        background-color: red;
+        border-radius: 2px;
+        transform: rotate(-45deg);
+        transition: all .3s ease-in;
+    }
+    .cl-btn-2 .close-btn {
+        margin: 7px 0 0 -10px;
+        position: absolute;
+        color: red;
+        font-size: 15px;
+        font-weight: bold;
+        transition: all .3s ease-in;
+        opacity: 0;
+        text-align: center;
+    }
+    .cl-btn-2 div:hover .leftright {
+        transform: rotate(-45deg);
+        background-color: DarkRed;
+    }
+    .cl-btn-2 div:hover .rightleft {
+        transform: rotate(45deg);
+        background-color: DarkRed;
+    }
+    .cl-btn-2 div:hover .close-btn {
+        opacity: 1;
+    }
     </style>
 </head>
 <body>
