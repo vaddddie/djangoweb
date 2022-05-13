@@ -97,8 +97,10 @@ def management(request):
 
         if request.POST.get(f"LightOn{i}"):
             output_msg(client, 1, 'test/light')
+            pass
         if request.POST.get(f"LightOff{i}"):
             output_msg(client, 0, 'test/light')
+            pass
 
         if request.POST.get(f"Default{i}"):
             pass
@@ -106,6 +108,10 @@ def management(request):
         if request.POST.get(f"Stop{i}"):
             status.Working = False
             status.GrowthProcess = 0
+            status.save()
+
+        if request.POST.get(f'Again{i}'):
+            status.TimeTarget = datetime.now() + timedelta(14)
             status.save()
 
         if request.POST.get(f"Accept{i}") and request.POST.get('ModsSelect') is not None:
@@ -155,3 +161,7 @@ class mode(CreateView):
     def get_contex_date(self, *, object_list=None, **kwargs):
         context = super().get_context_date(**kwargs)
         return context
+
+    def form_valid(self):
+        form = ModeForm(request.POST)
+        form.save()

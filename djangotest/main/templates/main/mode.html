@@ -7,12 +7,50 @@
     Creating a new mode
 </h4>
 <div align="center">
-    <div style="background-color:red; width:50%">
-        <table>
+    <div style="background-color:red; width:50%; padding:10px; border-radius:25px">
+        <table style="width:80%; text-align:center" border="2px">
             <tr>
-
+                <td style="width:50%">
+                    Mode name:
+                </td>
+                <td>
+                    {{ form.ModName }}
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%">
+                    Watering interval:
+                </td>
+                <td>
+                    {{ form.IWater }}
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%">
+                    Lighting interval:
+                </td>
+                <td>
+                    {{ form.ILight }}
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%">
+                    Temperature:
+                </td>
+                <td>
+                    {{ form.Temperature }}
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%">
+                    Humidity:
+                </td>
+                <td>
+                    {{ form.Humidity }}
+                </td>
             </tr>
         </table>
+        <button type="submit" class="btn btn-success">Add</button>
     </div>
 </div>
 
