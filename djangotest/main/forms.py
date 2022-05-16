@@ -26,7 +26,35 @@ class ModeForm(ModelForm):
             "Humidity"
         ]
         widgets = {
-            "ModName" : TextInput()
+            "ModName" : TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+            }),
+            "IWater": TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+            }),
+            "TWater": TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+            }),
+            "ILight": TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+
+            }),
+            "TLight": TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+            }),
+            "Temperature": TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+            }),
+            "Humidity": TextInput(attrs={
+                'class': 'form-control',
+                'style': 'height:30px'
+            })
         }
 
 

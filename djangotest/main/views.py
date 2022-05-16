@@ -170,11 +170,8 @@ def mode(request):
 class mode(CreateView):
     form_class = ModeForm
     template_name = 'main/mode.html'
+    success_url = '/mode'
 
     def get_contex_date(self, *, object_list=None, **kwargs):
         context = super().get_context_date(**kwargs)
         return context
-
-    def form_valid(self):
-        form = ModeForm(request.POST)
-        form.save()
