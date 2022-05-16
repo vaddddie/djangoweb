@@ -143,7 +143,7 @@ def management(request):
                 "Temperature": modes.Temperature,
                 "Humidity": modes.Humidity
             }
-            # output_msg(client, j_string, 'test/')
+            output_msg(client, j_string, 'test/mode')
 
     contex = {
         "statuses": statuses,

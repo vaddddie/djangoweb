@@ -2,62 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="Bug fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2022_14_50_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2022_14_50_[Changes]/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/djangotest/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/djangotest/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/djangotest/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/djangotest/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/djangotest/static/main/cssfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/djangotest/static/main/cssfile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/djangotest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/djangotest/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/djangotest/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/djangotest/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0002_mod_alter_status_farmname.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/migrations/0002_mod_alter_status_farmname.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0003_rename_mod_mode.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/migrations/0003_rename_mod_mode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0004_status_mode.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/migrations/0004_status_mode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/migrations/0005_status_working.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/migrations/0005_status_working.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/mqttController.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/mqttController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/ArinaBeLike.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/ArinaBeLike.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/mode.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/mode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/fonts/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/fonts/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/fonts/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/calendar-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/calendar-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-addlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-addlink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-alert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-alert.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-calendar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-calendar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-changelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-changelink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-clock.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-deletelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-deletelink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-no.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-no.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-unknown-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-unknown-alt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-unknown.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-unknown.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-viewlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-viewlink.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/icon-yes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/icon-yes.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/inline-delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/inline-delete.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/search.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/selector-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/selector-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/sorting-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/sorting-icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/tooltag-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/tooltag-add.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/img/tooltag-arrowright.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/img/tooltag-arrowright.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/js/vendor/select2/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/main/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,13 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649254519730</updated>
-    </task>
-    <task id="LOCAL-00049" summary="bug fixed">
-      <created>1650880763551</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1650880763551</updated>
     </task>
     <task id="LOCAL-00050" summary="bug fixed">
       <created>1650880820302</created>
@@ -488,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652441052982</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Bug fixed">
+      <created>1652708522227</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1652708522228</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
