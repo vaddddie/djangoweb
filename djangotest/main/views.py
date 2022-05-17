@@ -83,17 +83,31 @@ def management(request):
             return redirect('/management')
 
         if request.POST.get(f"CoolerOn{i}"):
-            # print(LightOn.auto_id)
-            # output_msg(client, {'ID':status.MacAddress}, 'test/blink')
-            pass
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 1
+            }
+            output_msg(client, msg, 'test/cooler')
 
         if request.POST.get(f"CoolerOff{i}"):
-            pass
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 2
+            }
+            output_msg(client, msg, 'test/cooler')
 
         if request.POST.get(f"WateringOn{i}"):
-            pass
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 1
+            }
+            output_msg(client, msg, 'test/pump')
         if request.POST.get(f"WateringOff{i}"):
-            pass
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 2
+            }
+            output_msg(client, msg, 'test/pump')
 
         if request.POST.get(f"LightOn{i}"):
             msg = {
@@ -116,7 +130,8 @@ def management(request):
                 "state": 0
             }
             output_msg(client, msg, 'test/light')
-            pass
+            output_msg(client, msg, 'test/pump')
+            output_msg(client, msg, 'test/cooler')
 
         if request.POST.get(f"Stop{i}"):
             status.Working = False
