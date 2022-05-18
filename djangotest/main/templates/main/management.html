@@ -10,27 +10,28 @@
         <div class="wrapper">
             {% if statuses %}
                 {% for el in statuses %}
+                <div style="width:600px; padding-top:20px; text-align:center; position:inline;">
+                    {% if not el.CheckLine %}
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="cl-btn-2" style="pointer-events:auto; position: absolute; left:100%; bottom:95%;">
+                                <div>
+                                    <div class="leftright"></div>
+                                    <input type="submit" style="opacity:0; position: absolute; top:-10px; width:25px; height:25px" name="Delete{{ el.id }}">
+                                    <div class="rightleft"></div>
+                                </div>
+                            </div>
+                        </form>
+                    {% endif %}
+
                     {% if el.CheckLine %}
-                        <div class="alert mt-2" style="width:49%; background-color:#9DF3C4; border: 10px double #62D2A2">
+                        <div class="alert mt-2" style="width:100%; background-color:#9DF3C4; border: 10px double #62D2A2">
                     {% else %}
-                        <div class="alert mt-2" style="width:49%; pointer-events: none; opacity: 0.5; background: #CCC">
+                        <div class="alert mt-2" style="width:100%; pointer-events:none; opacity:0.5; background: #CCC">
                     {% endif %}
                             <form method="post">
                                 {% csrf_token %}
                                 <table cellspacing="0" cellpadding="5" style="width:100%">
-                                    {% if not el.CheckLine %}
-                                        <tr>
-                                            <td colspan="3" style="padding:0">
-                                                <div class="cl-btn-2">
-                                                    <div>
-                                                        <div class="leftright"></div>
-                                                        <div class="rightleft"></div>
-                                                        <span class="close-btn">Delete</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    {% endif %}
                                     <tr>
                                         <td>
                                             <h3>{{ el.FarmName }}</h3>
@@ -134,6 +135,7 @@
                                 </table>
                             </form>
                         </div>
+                    </div>
                 {% endfor %}
             {% else %}
                 <br><h3 style="text-align:center">You don't have any cells :(</h3>

@@ -25,8 +25,7 @@ class index(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         statuses = Status.objects.all()
-        for i in range(1, len(statuses) + 1):
-            status = Status.objects.get(id=i)
+        for status in statuses:
 
             if status.Working:
                 temp = int((status.TimeTarget - datetime.now()).total_seconds())
@@ -75,8 +74,8 @@ class index(ListView):
 def management(request):
     statuses = Status.objects.all()
     mods = Mode.objects.all()
-    for i in range(1, len(statuses) + 1):
-        status = Status.objects.get(id=i)
+    for status in statuses:
+        i = status.id
         if request.POST.get(f"NameSend{i}") and request.POST.get(f"ChangeName{i}") != '':
             status.FarmName = request.POST.get(f"ChangeName{i}")
             status.save()
@@ -159,6 +158,11 @@ def management(request):
                 "Humidity": modes.Humidity
             }
             output_msg(client, j_string, 'test/mode')
+
+        if request.POST.get(f'Delete{i}'):
+            print('yes')
+            status.delete()
+            return redirect('/management')
 
     contex = {
         "statuses": statuses,
