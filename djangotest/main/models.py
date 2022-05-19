@@ -36,4 +36,4 @@ class Mode(models.Model):
         return '/management'
 
     def __str__(self):
-        return self.ModName
+        return self.ModeName
