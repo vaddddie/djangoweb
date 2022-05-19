@@ -6,7 +6,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.index.as_view(), name='home'),
-    path('mode', views.mode.as_view(), name='mode'),
+    path('createMode', views.cmode.as_view(), name='cmode'),
+    path('modes', views.modes.as_view(), name='mode'),
+    path('updateMode/<int:pk>', views.umodes.as_view(), name='umode'),
     path('management', views.management, name='management'),
     path('ArinaBeLike', views.ArinaBeLike, name='ArinaBeLike')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

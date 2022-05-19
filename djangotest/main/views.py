@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Status, Mode
 from .forms import ModeForm
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .mqttController import connect_mqtt, output_msg
 from datetime import datetime, timedelta, time, date
 
@@ -14,7 +14,6 @@ client_id = f"python-mqtt-{0}"
 
 client = connect_mqtt(broker, port, topic, client_id)
 client.loop_start()
-
 
 
 class index(ListView):
@@ -183,11 +182,27 @@ def ArinaBeLike(request):
     return render(request, "main/ArinaBeLike.html", contex)
 
 
-class mode(CreateView):
+class cmode(CreateView):
     form_class = ModeForm
-    template_name = 'main/mode.html'
-    success_url = '/mode'
+    template_name = 'main/createmodes.html'
+    success_url = '/modes'
 
     def get_contex_date(self, *, object_list=None, **kwargs):
         context = super().get_context_date(**kwargs)
         return context
+
+
+class modes(ListView):
+    model = Mode
+    template_name = 'main/mode.html'
+    context_object_name = 'mode'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class umodes(UpdateView):
+    model = Mode
+    form_class = ModeForm
+    template_name = 'main/updatemodes.html'
+    success_url = '/modes'
