@@ -17,7 +17,7 @@ class ModeForm(ModelForm):
     class Meta:
         model = Mode
         fields = [
-            "ModName",
+            "ModeName",
             "IWater",
             "TWater",
             "ILight",
@@ -26,7 +26,7 @@ class ModeForm(ModelForm):
             "Humidity"
         ]
         widgets = {
-            "ModName" : TextInput(attrs={
+            "ModeName" : TextInput(attrs={
                 'class': 'form-control',
                 'style': 'height:30px'
             }),

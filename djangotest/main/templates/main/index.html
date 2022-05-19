@@ -12,9 +12,9 @@
             {% if statuses %}
                 {% for el in statuses %}
                     {% if el.GrowthProcess < 100 %}
-                        <div class="alert mt-2" style="width:49%; background:#9DF3C4; border: 10px double #62D2A2">
+                        <div class="alert mt-2" style="width:600px; background:#9DF3C4; margin: 10px; border: 10px double #62D2A2">
                     {% else %}
-                        <div class="alert mt-2" style="width:49%; background:#9DF3C4; border: 10px double green">
+                        <div class="alert mt-2" style="width:600px; background:#9DF3C4; margin: 10px; border: 10px double green">
                     {% endif %}
                            <rb style="font-size:32px; font-weight:bold">{{ el.FarmName }}</rb>
                             {% if el.CheckLine %}
@@ -28,11 +28,22 @@
                             <p>Humidity: {{ el.Humidity }}%</p>
                             <p>Light: {{ el.Light }}%</p>
                             <p>Time Left: {{ el.TimeLeft }}</p>
-                            {% if el.Working %}
-                                <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
-                            {% else %}
-                                <h4>Growth Process: None</h4>
-                            {% endif %}
+                            <table>
+                                <tr>
+                                    <td>
+                                        {% if el.Working %}
+                                            <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
+                                        {% else %}
+                                            <h4>Growth Process: None</h4>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if not el.AvailabilityOfWater %}
+                                            <h4 style="position: relative; left: 40%; color: red">Not enough water</h4>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                 {% endfor %}
             {% else %}

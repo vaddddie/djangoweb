@@ -12,6 +12,7 @@ class Status(models.Model):
     GrowthProcess = models.IntegerField('Growth Process:')
     CheckLine = models.BooleanField('Online:', default=False)
     TimeDelta = models.DateTimeField('TimePass:',  auto_now=False)
+    AvailabilityOfWater = models.BooleanField('Availability of water', default=False)
     Mode = models.CharField('Mode:', max_length=50)
     Working = models.BooleanField('Working:', default=False)
 
@@ -23,7 +24,7 @@ class Status(models.Model):
 
 
 class Mode(models.Model):
-    ModName = models.CharField('ModName:', max_length=50)
+    ModeName = models.CharField('ModeName:', max_length=50)
     IWater = models.IntegerField('Watering Interval:')
     TWater = models.IntegerField('Watering Time:')
     ILight = models.IntegerField('Lighting Interval:')

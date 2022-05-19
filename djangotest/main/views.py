@@ -147,7 +147,7 @@ def management(request):
             status.Working = True
             status.TimeTarget = datetime.now() + timedelta(14)
             status.save()
-            modes = Mode.objects.get(ModName=temp)
+            modes = Mode.objects.get(ModeName=temp)
             j_string = {
                 "ID": status.MacAddress,
                 "IWater": modes.IWater,
@@ -160,9 +160,13 @@ def management(request):
             output_msg(client, j_string, 'test/mode')
 
         if request.POST.get(f'Delete{i}'):
-            print('yes')
             status.delete()
             return redirect('/management')
+
+        if request.POST.get(f'sendjson{i}'):
+            msg = request.POST.get(f"json{i}")
+            topic = request.POST.get(f"topic{i}")
+            output_msg(client, msg, topic)
 
     contex = {
         "statuses": statuses,
@@ -178,14 +182,7 @@ def ArinaBeLike(request):
     }
     return render(request, "main/ArinaBeLike.html", contex)
 
-"""
-def mode(request):
-    statuses = Status.objects.all()
-    contex = {
-        "statuses": statuses,
-    }
-    return render(request, 'main/mode.html')
-"""
+
 class mode(CreateView):
     form_class = ModeForm
     template_name = 'main/mode.html'

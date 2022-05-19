@@ -10,7 +10,7 @@
         <div class="wrapper">
             {% if statuses %}
                 {% for el in statuses %}
-                <div style="width:600px; padding-top:20px; text-align:center; position:inline;">
+                <div style="width:600px; padding-top:20px; position:inline; margin: 10px">
                     {% if not el.CheckLine %}
                         <form method="post">
                             {% csrf_token %}
@@ -55,8 +55,8 @@
                                                                     Select a mode
                                                                 </option>
                                                                 {% for mds in mods %}
-                                                                    <option name="{{ mds.ModName }}">
-                                                                        {{ mds.ModName }}
+                                                                    <option name="{{ mds.ModeName }}">
+                                                                        {{ mds.ModeName }}
                                                                     </option>
                                                                 {% endfor %}
                                                             </select>
@@ -132,6 +132,25 @@
                                             <input type="submit" class="btn" name="Default{{ el.id }}" value="Default" style="width:100%; background-color:#1FAB89; color:white">
                                         </td>
                                     </tr>
+
+                                    <tr>
+                                        <td colspan="3">
+                                            For developers
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control" style="width:100%" name="json{{ el.id }}" placeholder="Enter a json">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" style="width:100%" name="topic{{ el.id }}" placeholder="Enter a topic">
+                                        </td>
+                                        <td>
+                                            <input type="submit" class="btn" name="sendjson{{ el.id }}" value="Send" style="width:100%; background-color:#1FAB89; color:white">
+                                        </td>
+                                    </tr>
+
+
                                 </table>
                             </form>
                         </div>
