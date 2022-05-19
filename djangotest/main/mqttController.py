@@ -30,8 +30,7 @@ def connect_mqtt(broker, port, topic, client_id):
         print(json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex))
         j_string = json.loads(msg.payload.decode('UTF-8'), object_hook=as_complex)
         statuses = Status.objects.all()
-        for i in range(1, len(statuses) + 1):
-            status = Status.objects.get(id=i)
+        for status in statuses:
             if status.MacAddress == j_string['ID']:
                 status.Temperature = j_string['Temperature']
                 status.Humidity = j_string['Humidity']
@@ -46,7 +45,7 @@ def connect_mqtt(broker, port, topic, client_id):
                     Temperature=j_string['Temperature'],
                     Humidity=j_string['Humidity'],
                     AvailabilityOfWater=j_string['WaterS'],
-                    Light=0,
+                    Light=j_string['Light'],
                     TimeTarget=datetime.now(),
                     TimeLeft='None',
                     TimeDelta=datetime.now(),
