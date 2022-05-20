@@ -16,6 +16,7 @@ client = connect_mqtt(broker, port, topic, client_id)
 client.loop_start()
 
 
+
 class index(ListView):
     model = Status
     template_name = 'main/index.html'
@@ -149,10 +150,10 @@ def management(request):
             modes = Mode.objects.get(ModeName=temp)
             j_string = {
                 "ID": status.MacAddress,
-                "IWater": modes.IWater,
-                "TWater": modes.TWater,
-                "ILight": modes.ILight,
-                "TLight": modes.TWater,
+                "IWater": modes.IWater * 1000,
+                "TWater": modes.TWater * 1000,
+                "ILight": modes.ILight * 1000,
+                "TLight": modes.TLight * 1000,
                 "Temperature": modes.Temperature,
                 "Humidity": modes.Humidity
             }

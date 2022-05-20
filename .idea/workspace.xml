@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="bug fixed">
+    <list default="true" id="f30dd158-b6a8-4964-a05b-31b9bc5cbb42" name="Changes" comment="beta-release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/templates/main/mode.html" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/templates/main/mode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangotest/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangotest/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangotest/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,14 +53,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/what_is_love/Рабочий стол/Учеба/Python pr/projects/djangoweb"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/what_is_love/Рабочий стол/Учеба/Python pr/projects/djangoweb&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,20 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649254519730</updated>
-    </task>
-    <task id="LOCAL-00056" summary="bug fixed">
-      <created>1650881183449</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1650881183449</updated>
-    </task>
-    <task id="LOCAL-00057" summary="bug fixed">
-      <created>1650881291053</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1650881291053</updated>
     </task>
     <task id="LOCAL-00058" summary="bug fixed">
       <created>1650881378826</created>
@@ -440,7 +422,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652957046546</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="update page added">
+      <created>1652964708141</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1652964708142</updated>
+    </task>
+    <task id="LOCAL-00106" summary="beta-release">
+      <created>1652965764277</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1652965764278</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -475,6 +471,8 @@
     <MESSAGE value="jsons bug fixed" />
     <MESSAGE value="icon added" />
     <MESSAGE value="bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
+    <MESSAGE value="update page added" />
+    <MESSAGE value="beta-release" />
+    <option name="LAST_COMMIT_MESSAGE" value="beta-release" />
   </component>
 </project>
