@@ -1,4 +1,4 @@
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, DateTimeInput
 from .models import Status, Mode
 
 """
@@ -23,38 +23,46 @@ class ModeForm(ModelForm):
             "ILight",
             "TLight",
             "Temperature",
-            "Humidity"
+            "Humidity",
+            "GrowingTime"
         ]
         widgets = {
             "ModeName" : TextInput(attrs={
                 'class': 'form-control',
-                'style': 'height:30px'
+                'style': 'height:30px',
+                'placeholder': 'Enter a new name'
             }),
-            "IWater": TextInput(attrs={
+            "IWater": DateTimeInput(attrs={
                 'class': 'form-control',
                 'style': 'height:30px'
             }),
-            "TWater": TextInput(attrs={
+            "TWater": DateTimeInput(attrs={
                 'class': 'form-control',
                 'style': 'height:30px'
             }),
-            "ILight": TextInput(attrs={
+            "ILight": DateTimeInput(attrs={
                 'class': 'form-control',
                 'style': 'height:30px'
 
             }),
-            "TLight": TextInput(attrs={
+            "TLight": DateTimeInput(attrs={
                 'class': 'form-control',
                 'style': 'height:30px'
             }),
             "Temperature": TextInput(attrs={
                 'class': 'form-control',
-                'style': 'height:30px'
+                'style': 'height:30px',
+                'placeholder': 'Enter a temperature'
             }),
             "Humidity": TextInput(attrs={
                 'class': 'form-control',
+                'style': 'height:30px',
+                'placeholder': 'Enter a humidity'
+            }),
+            "GrowingTime": DateTimeInput(attrs={
+                'class': 'form-control',
                 'style': 'height:30px'
-            })
+            }),
         }
 
 

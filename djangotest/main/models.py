@@ -6,7 +6,6 @@ class Status(models.Model):
     MacAddress = models.CharField('Mac Address:', max_length=17)
     Temperature = models.IntegerField('Temperature:')
     Humidity = models.IntegerField('Humidity:')
-    Light = models.IntegerField('Light:')
     TimeTarget = models.DateTimeField('Time Target:')
     TimeLeft = models.CharField('Time Left:', max_length=50)
     GrowthProcess = models.IntegerField('Growth Process:')
@@ -14,7 +13,6 @@ class Status(models.Model):
     TimeDelta = models.DateTimeField('TimePass:',  auto_now=False)
     AvailabilityOfWater = models.BooleanField('Availability of water', default=False)
     Mode = models.CharField('Mode:', max_length=50)
-    Working = models.BooleanField('Working:', default=False)
 
     def get_absolute_url(self):
         return '/management'
@@ -25,12 +23,13 @@ class Status(models.Model):
 
 class Mode(models.Model):
     ModeName = models.CharField('ModeName:', max_length=50)
-    IWater = models.IntegerField('Watering Interval:')
-    TWater = models.IntegerField('Watering Time:')
-    ILight = models.IntegerField('Lighting Interval:')
-    TLight = models.IntegerField('Lighting Time:')
+    IWater = models.DurationField('Watering Interval:', default='00:00:00')
+    TWater = models.DurationField('Watering Time:', default='00:00:00')
+    ILight = models.DurationField('Lighting Interval:', default='00:00:00')
+    TLight = models.DurationField('Lighting Time:', default='00:00:00')
     Temperature = models.IntegerField('Temperature:')
     Humidity = models.IntegerField('Humidity:')
+    GrowingTime = models.DurationField('GrowingTime:', default='00:00:00')
 
     def get_absolute_url(self):
         return '/management'

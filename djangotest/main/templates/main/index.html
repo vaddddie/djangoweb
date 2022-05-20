@@ -26,16 +26,11 @@
                             {% endif %}
                             <p style="margin-top:20px">Temperature: {{ el.Temperature }}°С</p>
                             <p>Humidity: {{ el.Humidity }}%</p>
-                            <p>Light: {{ el.Light }}%</p>
                             <p>Time Left: {{ el.TimeLeft }}</p>
                             <table>
                                 <tr>
                                     <td>
-                                        {% if el.Working %}
-                                            <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
-                                        {% else %}
-                                            <h4>Growth Process: None</h4>
-                                        {% endif %}
+                                        <h4>Growth Process: {{ el.GrowthProcess }}%</h4>
                                     </td>
                                     <td>
                                         {% if not el.AvailabilityOfWater %}

@@ -10,12 +10,7 @@
             <table style="width:80%; text-align:center" cellpadding="10">
                 <tr>
                     <td colspan="2">
-                        <div style="padding:5px; padding-bottom:0px;">
-                            <a style="text-align:center; font-size:30px">
-                                {% block Title %}
-                                {% endblock %}
-                            </a><hr>
-                        </div>
+                        {% block Title %}{% endblock %}
                     </td>
                 </tr>
                 <tr>
@@ -72,6 +67,14 @@
                     </td>
                     <td>
                         {{ form.Humidity }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50%">
+                        Growing time:
+                    </td>
+                    <td>
+                        {{ form.GrowingTime }}
                     </td>
                 </tr>
             </table>

@@ -27,7 +27,8 @@ class index(ListView):
         statuses = Status.objects.all()
         for status in statuses:
 
-            if status.Working:
+            try:
+                mode = Mode.objects.get(ModeName=status.Mode)
                 temp = int((status.TimeTarget - datetime.now()).total_seconds())
 
                 if temp > 0:
@@ -56,12 +57,16 @@ class index(ListView):
 
                 status.TimeLeft = f'{days} day{suffix} {hours}:{minutes}:{seconds}'
 
-                ABSTime = 1000000
+                ABSTime = mode.GrowingTime.total_seconds()
 
                 if temp > 0:
-                    status.GrowthProcess = (ABSTime - temp) / ABSTime
+                    status.GrowthProcess = (1 - temp / ABSTime) * 100
                 else:
                     status.GrowthProcess = 100
+
+            except Mode.DoesNotExist:
+                    status.GrowthProcess = 0
+                    status.TimeLeft = 'None'
 
             if abs(datetime.now() - status.TimeDelta) > timedelta(0, 15):
                 status.CheckLine = False
@@ -111,17 +116,15 @@ def management(request):
         if request.POST.get(f"LightOn{i}"):
             msg = {
                 "MAC":status.MacAddress,
-                "state":1
+                "state": 1
             }
             output_msg(client, msg, 'test/light')
-            pass
         if request.POST.get(f"LightOff{i}"):
             msg = {
                 "MAC": status.MacAddress,
                 "state": 2
             }
             output_msg(client, msg, 'test/light')
-            pass
 
         if request.POST.get(f"Default{i}"):
             msg = {
@@ -132,28 +135,23 @@ def management(request):
             output_msg(client, msg, 'test/pump')
             output_msg(client, msg, 'test/cooler')
 
-        if request.POST.get(f"Stop{i}"):
-            status.Working = False
-            status.GrowthProcess = 0
-            status.save()
-
         if request.POST.get(f'Again{i}'):
-            status.TimeTarget = datetime.now() + timedelta(14)
+            temp = Mode.objects.get(ModeName=status.Mode)
+            status.TimeTarget = datetime.now() + temp.GrowingTime
             status.save()
 
         if request.POST.get(f"Accept{i}") and request.POST.get('ModsSelect') is not None:
             temp = request.POST.get('ModsSelect')
-            status.Mode = temp
-            status.Working = True
-            status.TimeTarget = datetime.now() + timedelta(14)
-            status.save()
             modes = Mode.objects.get(ModeName=temp)
+            status.Mode = temp
+            status.TimeTarget = datetime.now() + modes.GrowingTime
+            status.save()
             j_string = {
                 "ID": status.MacAddress,
-                "IWater": modes.IWater * 1000,
-                "TWater": modes.TWater * 1000,
-                "ILight": modes.ILight * 1000,
-                "TLight": modes.TLight * 1000,
+                "IWater": modes.IWater.total_seconds() * 1000,
+                "TWater": modes.TWater.total_seconds() * 1000,
+                "ILight": modes.ILight.total_seconds() * 1000,
+                "TLight": modes.TLight.total_seconds() * 1000,
                 "Temperature": modes.Temperature,
                 "Humidity": modes.Humidity
             }
@@ -207,3 +205,7 @@ class umodes(UpdateView):
     form_class = ModeForm
     template_name = 'main/updatemodes.html'
     success_url = '/modes'
+
+    def post(self, request, *args, **kwargs):
+        if request.POST.get('Delete'):
+            return redirect('/modes')
