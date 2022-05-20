@@ -45,7 +45,6 @@ def connect_mqtt(broker, port, topic, client_id):
                     Temperature=j_string['Temperature'],
                     Humidity=j_string['Humidity'],
                     AvailabilityOfWater=j_string['WaterS'],
-                    Light=j_string['Light'],
                     TimeTarget=datetime.now(),
                     TimeLeft='None',
                     TimeDelta=datetime.now(),
