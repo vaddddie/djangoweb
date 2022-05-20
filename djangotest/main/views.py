@@ -148,10 +148,10 @@ def management(request):
             status.save()
             j_string = {
                 "ID": status.MacAddress,
-                "IWater": modes.IWater.total_seconds() * 1000,
-                "TWater": modes.TWater.total_seconds() * 1000,
-                "ILight": modes.ILight.total_seconds() * 1000,
-                "TLight": modes.TLight.total_seconds() * 1000,
+                "IWater": int(modes.IWater.total_seconds() * 1000),
+                "TWater": int(modes.TWater.total_seconds() * 1000),
+                "ILight": int(modes.ILight.total_seconds() * 1000),
+                "TLight": int(modes.TLight.total_seconds() * 1000),
                 "Temperature": modes.Temperature,
                 "Humidity": modes.Humidity
             }
