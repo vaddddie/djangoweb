@@ -16,7 +16,7 @@
                     {% else %}
                         <div class="alert mt-2" style="width:600px; background:#9DF3C4; margin: 10px auto; border: 10px double green">
                     {% endif %}
-                           <rb style="font-size:32px; font-weight:bold">{{ el.FarmName }}</rb>
+                            <rb style="font-size:32px; font-weight:bold">{{ el.FarmName }}</rb>
                             {% if el.CheckLine %}
                                 <rb style="float:right; margin-top:13px; display:block; width:20px; height:20px; border-radius:10px; background-color: green;"></rb>
                                 <rb style="font-size:22px; float:right; margin-top:5px; margin-right:10px">Online</rb>
@@ -24,7 +24,8 @@
                                 <rb style="float:right; margin-top:13px; display:block; width:20px; height:20px; border-radius:10px; background-color: red;"></rb>
                                 <rb style="font-size:22px; float:right; margin-top:5px; margin-right:10px">Offline</rb>
                             {% endif %}
-                            <p style="margin-top:20px">Temperature: {{ el.Temperature }}°С</p>
+                            <p style="margin-top:20px">Mode: {{ el.Mode }}</p>
+                            <p>Temperature: {{ el.Temperature }}°С</p>
                             <p>Humidity: {{ el.Humidity }}%</p>
                             <p>Time Left: {{ el.TimeLeft }}</p>
                             <table>

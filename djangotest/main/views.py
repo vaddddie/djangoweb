@@ -206,6 +206,8 @@ class umodes(UpdateView):
     template_name = 'main/updatemodes.html'
     success_url = '/modes'
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, **kwargs):
         if request.POST.get('Delete'):
+            self.get_object().delete()
             return redirect('/modes')
+        return super(umodes, self).post(request, **kwargs)
