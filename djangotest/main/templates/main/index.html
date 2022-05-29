@@ -27,6 +27,13 @@
                             <p style="margin-top:20px">Mode: {{ el.Mode }}</p>
                             <p>Temperature: {{ el.Temperature }}°С</p>
                             <p>Humidity: {{ el.Humidity }}%</p>
+
+                            {% if el.Light == 1 %}
+                                <p>Light: detected</p>
+                            {% else %}
+                                <p>Light: not detected</p>
+                            {% endif %}
+
                             <p>Time Left: {{ el.TimeLeft }}</p>
                             <table>
                                 <tr>

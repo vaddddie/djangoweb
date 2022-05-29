@@ -34,6 +34,7 @@ def connect_mqtt(broker, port, topic, client_id):
             if status.MacAddress == j_string['ID']:
                 status.Temperature = j_string['Temperature']
                 status.Humidity = j_string['Humidity']
+                status.Light = j_string['Light']
                 status.TimeDelta = datetime.now()
                 status.AvailabilityOfWater = j_string['WaterS']
                 status.save()
@@ -44,6 +45,7 @@ def connect_mqtt(broker, port, topic, client_id):
                     MacAddress=j_string['ID'],
                     Temperature=j_string['Temperature'],
                     Humidity=j_string['Humidity'],
+                    Light=j_string['Light'],
                     AvailabilityOfWater=j_string['WaterS'],
                     TimeTarget=datetime.now(),
                     TimeLeft='None',

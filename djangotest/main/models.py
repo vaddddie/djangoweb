@@ -5,6 +5,7 @@ class Status(models.Model):
     FarmName = models.CharField('Farm name:', max_length=50)
     MacAddress = models.CharField('Mac Address:', max_length=17)
     Temperature = models.IntegerField('Temperature:')
+    Light = models.IntegerField('Light')
     Humidity = models.IntegerField('Humidity:')
     TimeTarget = models.DateTimeField('Time Target:')
     TimeLeft = models.CharField('Time Left:', max_length=50)
