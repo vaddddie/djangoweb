@@ -5,20 +5,20 @@
 {% block content %}
     <div class="cont">
         <h4>
-            <p style="text-align: center; font-size:35px">Management</p>
+            <p style="text-align:center; font-size:35px">Management</p>
         </h4>
         <div class="wrapper">
             {% if statuses %}
                 {% for el in statuses %}
-                <div style="width:600px; padding-top:20px; position:inline; margin: 10px">
+                <div style="width:600px; padding-top:20px; position:inline; margin:10px">
                     {% if not el.CheckLine %}
                         <form method="post">
                             {% csrf_token %}
-                            <div class="cl-btn-2" style="pointer-events:auto; position: absolute; left:100%; bottom:95%;">
+                            <div class="cl-btn-2" style="pointer-events:auto; position:absolute; left:100%; bottom:95%;">
                                 <div>
                                     <div class="leftright"></div>
                                     <div class="rightleft"></div>
-                                    <input type="submit" style="opacity:0; position: absolute; top:-10px; width:25px; height:25px" name="Delete{{ el.id }}">
+                                    <input type="submit" style="opacity:0; position:absolute; top:-10px; width:25px; height:25px" name="Delete{{ el.id }}">
                                 </div>
                             </div>
                         </form>
@@ -40,11 +40,11 @@
                                             <input type="text" class="form-control" style="width:100%" name="ChangeName{{ el.id }}" placeholder="Enter a new name">
                                         </td>
                                         <td>
-                                            <input type="submit" class="btn" name="NameSend{{ el.id }}" value="Rename" style="width:100%; background-color:#1FAB89; color:white">
+                                            <input type="submit" class="btn" name="NameSend{{ el.id }}" value="Rename" style="width:200%; background-color:#1FAB89; color:white">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="4">
                                             <hr><br>
                                             <div>
                                                 <table style="width:100%">
@@ -70,10 +70,11 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="4">
                                             <div>
                                                 <input type="submit" class="btn" name="Again{{ el.id }}" value="Again" style="width:100%; background-color:#1FAB89; color:white">
-                                            </div><br><hr>
+                                            </div>
+                                            <br><hr>
                                         </td>
                                     </tr>
                                     <tr>
@@ -87,6 +88,9 @@
                                             <td>
                                                 <input type="submit" class="btn" name="CoolerOff{{ el.id }}" value="Off" style="width:100%; background-color:#1FAB89; color:white">
                                             </td>
+                                            <td>
+                                                <input type="submit" class="btn" name="CoolerDefault{{ el.id }}" value="Default" style="width:100%; background-color:#1FAB89; color:white">
+                                            </td>
                                         </p>
                                     </tr>
                                     <tr>
@@ -96,8 +100,12 @@
                                             </td>
                                             <td>
                                                 <input type="submit" class="btn" name="WateringOn{{ el.id }}" value="On" style="width:100%; background-color:#1FAB89; color:white">
-                                            </td><td>
+                                            </td>
+                                            <td>
                                                 <input type="submit" class="btn" name="WateringOff{{ el.id }}" value="Off" style="width:100%; background-color:#1FAB89; color:white">
+                                            </td>
+                                            <td>
+                                                <input type="submit" class="btn" name="WateringDefault{{ el.id }}" value="Default" style="width:100%; background-color:#1FAB89; color:white">
                                             </td>
                                         </p>
                                     </tr>
@@ -108,19 +116,19 @@
                                             </td>
                                             <td>
                                                 <input type="submit" class="btn" name="LightOn{{ el.id }}" value="On" style="width:100%; background-color:#1FAB89; color:white">
-                                            </td><td>
+                                            </td>
+                                            <td>
                                                 <input type="submit" class="btn" name="LightOff{{ el.id }}" value="Off" style="width:100%; background-color:#1FAB89; color:white">
+                                            </td>
+                                            <td>
+                                                <input type="submit" class="btn" name="LightDefault{{ el.id }}" value="Default" style="width:100%; background-color:#1FAB89; color:white">
                                             </td>
                                         </p>
                                     </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                            <input type="submit" class="btn" name="Default{{ el.id }}" value="Default" style="width:100%; background-color:#1FAB89; color:white">
-                                        </td>
-                                    </tr>
 
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="4">
+                                            <br><hr>
                                             For developers
                                         </td>
                                     </tr>
@@ -132,7 +140,7 @@
                                             <input type="text" class="form-control" style="width:100%" name="topic{{ el.id }}" placeholder="Enter a topic">
                                         </td>
                                         <td>
-                                            <input type="submit" class="btn" name="sendjson{{ el.id }}" value="Send" style="width:100%; background-color:#1FAB89; color:white">
+                                            <input type="submit" class="btn" name="sendjson{{ el.id }}" value="Send" style="width:200%; background-color:#1FAB89; color:white">
                                         </td>
                                     </tr>
 

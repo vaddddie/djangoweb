@@ -92,11 +92,16 @@ def management(request):
                 "state": 1
             }
             output_msg(client, msg, 'test/cooler')
-
         if request.POST.get(f"CoolerOff{i}"):
             msg = {
                 "MAC": status.MacAddress,
                 "state": 2
+            }
+            output_msg(client, msg, 'test/cooler')
+        if request.POST.get(f"CoolerDefault{i}"):
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 0
             }
             output_msg(client, msg, 'test/cooler')
 
@@ -112,10 +117,16 @@ def management(request):
                 "state": 2
             }
             output_msg(client, msg, 'test/pump')
+        if request.POST.get(f"WateringDefault{i}"):
+            msg = {
+                "MAC": status.MacAddress,
+                "state": 0
+            }
+            output_msg(client, msg, 'test/pump')
 
         if request.POST.get(f"LightOn{i}"):
             msg = {
-                "MAC":status.MacAddress,
+                "MAC": status.MacAddress,
                 "state": 1
             }
             output_msg(client, msg, 'test/light')
@@ -125,15 +136,12 @@ def management(request):
                 "state": 2
             }
             output_msg(client, msg, 'test/light')
-
-        if request.POST.get(f"Default{i}"):
+        if request.POST.get(f"LightDefault{i}"):
             msg = {
                 "MAC": status.MacAddress,
                 "state": 0
             }
             output_msg(client, msg, 'test/light')
-            output_msg(client, msg, 'test/pump')
-            output_msg(client, msg, 'test/cooler')
 
         if request.POST.get(f'Again{i}'):
             temp = Mode.objects.get(ModeName=status.Mode)
