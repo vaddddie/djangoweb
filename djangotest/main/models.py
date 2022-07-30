@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class Status(models.Model):
@@ -11,7 +12,7 @@ class Status(models.Model):
     TimeLeft = models.CharField('Time Left:', max_length=50)
     GrowthProcess = models.IntegerField('Growth Process:')
     CheckLine = models.BooleanField('Online:', default=False)
-    TimeDelta = models.DateTimeField('TimePass:',  auto_now=False)
+    TimeDelta = models.DateTimeField('TimePass:', auto_now=False)
     AvailabilityOfWater = models.BooleanField('Availability of water', default=False)
     Mode = models.CharField('Mode:', max_length=50)
 
@@ -37,3 +38,17 @@ class Mode(models.Model):
 
     def __str__(self):
         return self.ModeName
+
+
+class CoolerStatistics(models.Model):
+    Value = ArrayField(models.IntegerField('Value:', default=0), size=30)
+
+
+class PumpStatistics(models.Model):
+    Value = ArrayField(models.IntegerField('Value:', default=0), size=30)
+
+
+class LightStatistics(models.Model):
+    Value = ArrayField(models.IntegerField('Value:', default=0), size=30)
+
+
