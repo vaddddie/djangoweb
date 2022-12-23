@@ -1,0 +1,131 @@
+{% extends 'main/base_beta.html' %}
+{% load static %}
+
+{% block title %}FARMS{% endblock %}
+
+{% block content %}
+    <meta http-equiv="refresh" content="5">
+    {% if cells %}
+        {% for el in cells %}
+            <div class="container">
+                <div class="frame">
+                    <div class="title">
+                        <div class="name part">
+                            <a>{{ el.Name }}</a>
+                        </div>
+                        <div class="status part">
+                            {% if el.Online %}
+                                <a>Online</a>
+                                <div class="circle_online"></div>
+                            {% else %}
+                                <a>Offline</a>
+                                <div class="circle_offline"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="frame">
+                    <div class="shell_mode">
+                        <div class="mode">
+                            <div class="part">
+                                <div class="title_value"><a>MODE:</a></div>
+                                <div class="value"><a>{{ el.Mode }}</a></div>
+                            </div>
+                        </div>
+                        <div class="part water filling">
+                            {% if not el.AvailabilityOfWater %}
+                                <a class="danger">NOT ENOUGH WATER</a>
+                            {% else %}
+                                <a class="success">ENOUGH WATER</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="shell_input_values">
+                        <div class="part filling shell_img">
+                            <img src="{{ el.Image.url }}"/>
+                        </div>
+                        <div class="input_values">
+                            <div class="part">
+                                <div class="rows">
+                                    <div class="row gray">
+                                        <div class="title_value"><a>TEMPERATURE:</a></div>
+                                        <div class="value">
+                                            <a>{{ el.Temperature }}°С</a>
+                                            {% if el.Temperature_arrow == -2 %}
+                                                <img src="{% static 'main/arrows/red_down.png' %}">
+                                            {% elif el.Temperature_arrow == -1 %}
+                                                <img src="{% static 'main/arrows/green_down.png' %}">
+                                            {% elif el.Temperature_arrow == 1 %}}
+                                                <img src="{% static 'main/arrows/green_up.png' %}">
+                                            {% elif el.Temperature_arrow == 2 %}
+                                                <img src="{% static 'main/arrows/red_up.png' %}">
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="title_value"><a>HUMIDITY:</a></div>
+                                        <div class="value">
+                                            <a>{{ el.Humidity }}%</a>
+                                            {% if el.Humidity_arrow == -2 %}
+                                                <img src="{% static 'main/arrows/red_down.png' %}">
+                                            {% elif el.Humidity_arrow == -1 %}
+                                                <img src="{% static 'main/arrows/green_down.png' %}">
+                                            {% elif el.Humidity_arrow == 1 %}}
+                                                <img src="{% static 'main/arrows/green_up.png' %}">
+                                            {% elif el.Humidity_arrow == 2 %}
+                                                <img src="{% static 'main/arrows/red_up.png' %}">
+                                            {% endif %}
+                                        </div>
+
+                                    </div>
+                                    <div class="row gray">
+                                        <div class="title_value"><a>LIGHT:</a></div>
+                                        <div class="value">
+                                            {% if el.Light %}
+                                                <a>detected</a>
+                                            {% else %}
+                                                <a>not detected</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shell_process">
+                        <div class="process">
+                            <div class="part">
+                                <div class="rows">
+                                    <div class="row">
+                                        <div class="title_value"><a>TIME LEFT:</a></div>
+                                        <div class="value"><a>{{ el.TimeLeft }}</a></div>
+                                    </div>
+                                    <div class="row gray">
+                                        <div class="title_value"><a>GROWTH PROCESS:</a></div>
+                                        <div class="value"><a>{{ el.GrowthProcess }}%</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="part filling btn_stats">
+                            <p>STATISTIC</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="container">
+            <div class="frame">
+                <a class="null_cells part">You don't have any cells :(</a>
+            </div>
+        </div>
+        <div class="container">
+            <p class="null_cells_p frame_no_border">
+                To get started, you need to connect at least one cell to the city-farm. Click
+                <a href="#">HERE</a>
+                to get a detailed guide on connecting cells to the city-farm.
+            </p>
+        </div>
+    {% endif %}
+{% endblock %}

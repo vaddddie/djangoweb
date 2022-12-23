@@ -1,0 +1,162 @@
+{% extends 'main/base_beta.html' %}
+{% load static %}
+
+{% block title %}MANAGEMENT{% endblock %}
+
+{% block content %}
+    <meta http-equiv="refresh" content="5">
+    {% if cells %}
+        {% for el in cells %}
+            <div class="container">
+                <div class="frame">
+                    <div class="title">
+                        <div class="name part">
+                            <a>{{ el.Name }}</a>
+                        </div>
+                        <div class="status part">
+                            {% if el.Online %}
+                                <a>Online</a>
+                                <div class="circle_online"></div>
+                            {% else %}
+                                <div class="cross_pre_container">
+                                    <div class="cross_container">
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input type="submit" name="Delete{{ el.id }}" value="">
+                                            <img src="{% static 'main/other/red_cross.png' %}"/>
+                                        </form>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="frame">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="part end_container">
+                            <div class="end_label">
+                                <input class="label" type="text" name="ChangeName{{ el.id }}" placeholder="Enter a new name">
+                            </div>
+                            <div class="end_button">
+                                <input class="btn" type="submit" name="Rename{{ el.id }}" value="SET">
+                            </div>
+                        </div>
+                        {% if el.Online %}
+                        <div class="part end_container">
+                        {% else %}
+                        <div class="part end_container disabled">
+                        {% endif %}
+                            <div class="end_label">
+                                <select class="label label_for_mode" name="ModsSelect">
+                                    <option selected hidden disabled>
+                                        Select a mode
+                                    </option>
+                                    {% for mds in modes %}
+                                        <option name="{{ mds.Name }}">
+                                            {{ mds.Name }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="end_button">
+                                <input class="btn" type="submit" name="Accept{{ el.id }}" value="SET">
+                            </div>
+                        </div>
+                        <div class="end_container">
+                            {% if el.Online %}
+                            <div class="end_label part">
+                            {% else %}
+                            <div class="end_label part disabled">
+                            {% endif %}
+                                <div class="columns">
+                                    <div class="text_VALUES gray">COOLER</div>
+                                    <div class="text_VALUES">PUMP</div>
+                                    <div class="text_VALUES gray">LIGHT</div>
+                                </div>
+                            </div>
+                            {% if el.Online %}
+                            <div class="end_button part">
+                            {% else %}
+                            <div class="end_button part disabled">
+                            {% endif %}
+                                <div class="columns">
+                                    <div class="content margin_bottom">
+                                        {% if el.CoolerState == 1 %}
+                                            <input class="btn btn_success btn_active_success" type="submit" name="CoolerOn{{ el.id }}" value="">
+                                        {% else %}
+                                            <input class="btn btn_success" type="submit" name="CoolerOn{{ el.id }}" value="">
+                                        {% endif %}
+
+                                        {% if el.CoolerState == 2 %}
+                                            <input class="btn btn_active_common" type="submit" name="CoolerDefault{{ el.id }}" value="<^_^>">
+                                        {% else %}
+                                            <input class="btn" type="submit" name="CoolerDefault{{ el.id }}" value="">
+                                        {% endif %}
+
+                                        {% if el.CoolerState == 0 %}
+                                            <input class="btn btn_danger btn_active_danger" type="submit" name="CoolerOff{{ el.id }}" value="">
+                                        {% else %}
+                                            <input class="btn btn_danger" type="submit" name="CoolerOff{{ el.id }}" value="">
+                                        {% endif %}
+                                    </div>
+                                    <div class="content margin_bottom">
+                                        {% if el.PumpState == 1 %}
+                                            <input class="btn btn_success btn_active_success" type="submit" name="WateringOn{{ el.id }}" value="">
+                                        {% else %}
+                                            <input class="btn btn_success" type="submit" name="WateringOn{{ el.id }}" value="">
+                                        {% endif %}
+
+                                        {% if el.PumpState == 2 %}
+                                            <input class="btn btn_active_common" type="submit" name="WateringDefault{{ el.id }}" value="(0_o)">
+                                        {% else %}
+                                            <input class="btn" type="submit" name="WateringDefault{{ el.id }}" value="">
+                                        {% endif %}
+
+                                        {% if el.PumpState == 0 %}
+                                            <input class="btn btn_danger btn_active_danger" type="submit" name="WateringOff{{ el.id }}" value="">
+                                        {% else %}
+                                            <input class="btn btn_danger" type="submit" name="WateringOff{{ el.id }}" value="">
+                                        {% endif %}
+                                    </div>
+                                    <div class="content">
+                                        {% if el.LampState == 1 %}
+                                            <input class="btn btn_success btn_active_success" type="submit" name="LightOn{{ el.id }}" value="">
+                                        {% else %}
+                                            <input class="btn btn_success" type="submit" name="LightOn{{ el.id }}" value="">
+                                        {% endif %}
+
+                                        {% if el.LampState == 2 %}
+                                            <input class="btn btn_active_common" type="submit" name="LightDefault{{ el.id }}" value="[+=+]">
+                                        {% else %}
+                                            <input class="btn" type="submit" name="LightDefault{{ el.id }}" value="">
+                                        {% endif %}
+
+                                        {% if el.LampState == 0 %}
+                                            <input class="btn btn_danger btn_active_danger" type="submit" name="LightOff{{ el.id }}" value="">
+                                        {% else %}
+                                            <input class="btn btn_danger" type="submit" name="LightOff{{ el.id }}" value="">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="container">
+            <div class="frame">
+                <a class="null_cells part">You don't have any cells :(</a>
+            </div>
+        </div>
+        <div class="container">
+            <p class="null_cells_p frame_no_border">
+                To get started, you need to connect at least one cell to the city-farm. Click
+                <a href="#">HERE</a>
+                to get a detailed guide on connecting cells to the city-farm.
+            </p>
+        </div>
+    {% endif %}
+{% endblock %}

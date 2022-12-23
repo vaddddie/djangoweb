@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'main/favicon.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+    <link href="{% static 'main/styles.css' %}" rel="stylesheet">
+    <script src="{% static 'main/js/jQuery.js' %}" ></script>
+</head>
+<body>
+    <div class="page">
+        <div class="side nav">
+            <nav>
+                <ul>
+                    {% if request.path == '/' %}
+                    <li><a class="nav_a_onClick" href="{% url 'farms' %}">FARMS</a></li>
+                    {% else %}
+                    <li><a href="{% url 'farms' %}">FARMS</a></li>
+                    {% endif %}
+                    {% if '/Management' in request.path %}
+                    <li><a class="nav_a_onClick" href="{% url 'management' %}">MANAGEMENT</a></li>
+                    {% else %}
+                    <li><a href="{% url 'management' %}">MANAGEMENT</a></li>
+                    {% endif %}
+                    {% if '/Modes' in request.path %}
+                    <li><a class="nav_a_onClick" href="{% url 'farms' %}">MODES</a></li>
+                    {% else %}
+                    <li><a href="{% url 'farms' %}">MODES</a></li>
+                    {% endif %}
+                    {% if '/Notifications' in request.path %}
+                    <li><a class="nav_a_onClick" href="{% url 'farms' %}">NOTIFICATIONS</a></li>
+                    {% else %}
+                    <li><a href="{% url 'farms' %}">NOTIFICATIONS</a></li>
+                    {% endif %}
+                    {% if '/FAQ' in request.path %}
+                    <li><a class="nav_a_onClick" href="{% url 'farms' %}">FAQ</a></li>
+                    {% else %}
+                    <li><a href="{% url 'farms' %}">FAQ</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <div class="main">{% block content %}{% endblock %}</div>
+        <div class="side"></div>
+    </div>
+</body>
+</html>
