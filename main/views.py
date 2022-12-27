@@ -8,7 +8,7 @@ from .buttons import get_button
 
 broker = "192.168.4.1"
 port = 1883
-topic = "test/blink"
+topic = "test/heartbeat"
 client_id = f"python-mqtt-{0}"
 
 

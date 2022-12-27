@@ -18,7 +18,7 @@ def connect_mqtt(broker, port, topic, client_id):
             print("Connected to MQTT Broker!")
         else:
             print("Failed to connect, return code %d\n", rc)
-        client.subscribe("test/heartbeat")  # Subscribe on the topic "heartbeat"
+        client.subscribe(topic)  # Subscribe on the topic "heartbeat"
 
     def on_message(client, userdata, msg):
         def as_complex(dct):

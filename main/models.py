@@ -19,9 +19,9 @@ class Cell(models.Model):
     AvailabilityOfWater = models.BooleanField('Availability of water', default=False)
     Mode = models.CharField('Mode:', max_length=50)
     # ========States==========
-    CoolerState = models.IntegerField('Cooler state:')  # states: 0 - off, 1 - on, 2 - default
-    PumpState = models.IntegerField('Pump state:')
-    LampState = models.IntegerField('Lamp state:')
+    CoolerState = models.IntegerField('Cooler state:', default=2)  # states: 0 - off, 1 - on, 2 - default
+    PumpState = models.IntegerField('Pump state:', default=2)
+    LampState = models.IntegerField('Lamp state:', default=2)
     # ========Arrows==========
     Temperature_arrow = models.IntegerField('Arrow on the temperature:', default=0)
     Humidity_arrow = models.IntegerField('Arrow on the humidity:', default=0)
