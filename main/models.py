@@ -43,6 +43,9 @@ class Mode(models.Model):
     Temperature = models.IntegerField('Temperature:')
     Humidity = models.IntegerField('Humidity:')
     GrowingTime = models.DurationField('GrowingTime:', default='00:00:00')
+    # ===============   Chain protocol ==================
+    IsNode = models.BooleanField('Is node:', default=False)
+    NextId = models.IntegerField('Next mode id:', default=-1)
 
     def __str__(self):
         return self.Name

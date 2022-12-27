@@ -21,7 +21,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 1
             }
-            # output_msg(client, msg, 'test/cooler')
+            output_msg(client, msg, 'test/cooler')
             break
 
         if request.POST.get(f"CoolerOff{ID}") is not None:
@@ -31,7 +31,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 2
             }
-            # output_msg(client, msg, 'test/cooler')
+            output_msg(client, msg, 'test/cooler')
             break
 
         if request.POST.get(f"CoolerDefault{ID}") is not None:
@@ -41,7 +41,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 0
             }
-            # output_msg(client, msg, 'test/cooler')
+            output_msg(client, msg, 'test/cooler')
             break
 
         # ========================= PUMP =========================
@@ -52,7 +52,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 1
             }
-            # output_msg(client, msg, 'test/pump')
+            output_msg(client, msg, 'test/pump')
             break
 
         if request.POST.get(f"WateringOff{ID}") is not None:
@@ -62,7 +62,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 2
             }
-            # output_msg(client, msg, 'test/pump')
+            output_msg(client, msg, 'test/pump')
             break
 
         if request.POST.get(f"WateringDefault{ID}") is not None:
@@ -72,7 +72,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 0
             }
-            # output_msg(client, msg, 'test/pump')
+            output_msg(client, msg, 'test/pump')
             break
 
         # ========================= LAMP =========================
@@ -83,7 +83,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 1
             }
-            # output_msg(client, msg, 'test/light')
+            output_msg(client, msg, 'test/light')
             break
 
         if request.POST.get(f"LightOff{ID}") is not None:
@@ -93,7 +93,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 2
             }
-            # output_msg(client, msg, 'test/light')
+            output_msg(client, msg, 'test/light')
             break
 
         if request.POST.get(f"LightDefault{ID}") is not None:
@@ -103,7 +103,7 @@ def get_button(request, client):
                 "MAC": cell.MacAddress,
                 "state": 0
             }
-            # output_msg(client, msg, 'test/light')
+            output_msg(client, msg, 'test/light')
             break
 
         # ========================= Mode selection =========================
@@ -122,7 +122,7 @@ def get_button(request, client):
                 "Temperature": mode.Temperature,
                 "Humidity": mode.Humidity
             }
-            # output_msg(client, j_string, 'test/mode')
+            output_msg(client, j_string, 'test/mode')
             break
 
         if request.POST.get(f'Delete{ID}') is not None:
