@@ -3,6 +3,22 @@
 {% block title %}MODES{% endblock %}
 
 {% block content %}
+    <div class="container">
+        <div class="frame">
+            <a href="#" class="part btn_stats"><p>+ Add a mode</p></a>
+        </div>
+    </div>
     {% if modes %}
+        <div class="container">
+            <div class="frame">
+                {% for el in modes %}
+                    {% if not el.IsNode %}
+                        <div class="part">
+                            {{ el.Name }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
     {% endif %}
 {% endblock %}
